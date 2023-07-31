@@ -1,0 +1,125 @@
+.main{
+    padding:50px;
+}
+
+.image{
+    width:150px;
+    padding:20px;
+}
+
+.background{
+    background-color:#333333;
+    background-size:cover;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+th {
+    background-color: #5A5EE6;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #eee;
+}
+
+.action-button {
+    padding: 8px 16px;
+    background-color: #ff4b5c;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #ff1f35;
+}
+
+.id{
+    width:50px;
+
+}
+.code{
+    width:90px;
+}
+
+.courseName{
+    padding-right:13px;
+    width:200px;
+}
+
+.desc{
+    text-align:left;
+    width: 700px;
+}
+
+.search-container {
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 10px;
+    padding-bottom:10px;
+}
+
+.search-container input[type=text] {
+    padding: 18px;
+    border: none;
+    border-radius: 4px;
+    width: 350px;
+}
+
+.search-container button {
+    padding: 18px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius:4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left:5px;
+}
+
+.search-container a {
+    text-decoration:none;
+    padding: 18px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius:4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left:5px;
+}
+
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+.search-container a:hover {
+    background-color: #45a049;
+}
+
+.table-container{
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+.w-5{
+display: none;
+}
