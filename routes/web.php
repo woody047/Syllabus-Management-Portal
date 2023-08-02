@@ -22,7 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::get("/home",[CourseController::class,'showlist']);
+Route::get('/home',[CourseController::class,'showlist']);
 Route::view('/createCourse','createCourse');
 Route::view('/createCourse2','createCourse2');
 

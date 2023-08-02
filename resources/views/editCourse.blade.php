@@ -36,7 +36,7 @@
                     <tr>
                         <td>2.</td>
                         <td class="courseInfo">
-                            <label>Synopsis:&nbsp;</label><br><input name="course_synopsis" style="width:1100px;height:50px;" value="{{$course->course_synopsis}}"></input>
+                            <label>Synopsis:&nbsp;</label><br><textarea name="course_synopsis" rows="5" cols="50" style="width:1100px;height:200px;">{{$course->course_synopsis}}</textarea>
                         </td>
                     </tr>
                     <tr>

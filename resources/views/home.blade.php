@@ -19,6 +19,7 @@
     </div>
     <div class="table-container">
         <table>
+        @if(count($course)>0)
             <thead>
                 <tr>
                     <th>ID</th>
@@ -46,12 +47,15 @@
                     </div>
                 </tr>
                 @endforeach
+                <span>
+                    {{$course->links()}}
+                </span>
             </tbody>
+        @else
+            <p>No courses created</p>
+        @endif
         </table>
     </div>
-    <span>
-        {{$course->links()}}
-    </span>
 </body>
 </div>
 @endsection

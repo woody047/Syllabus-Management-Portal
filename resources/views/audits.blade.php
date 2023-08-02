@@ -20,6 +20,7 @@
 
         <div class="table-container">
         <table>
+        @if(count($audits)>0)
             <thead>
             <tr>
                 <th scope="col">User</th>
@@ -58,6 +59,9 @@
                 </tr>
             @endforeach
             </tbody>
+        @else
+            <p>No audit logs recorded</p>
+        @endif
         </table>
         </div>
     </body>
