@@ -63,7 +63,7 @@
                                             <a class="dropdown-item" href="/home">{{ __('Home') }}</a>
                                             <a class="dropdown-item" href="/audits">{{ __('Audit Log') }}</a>
                                             @if (Gate::allows('isStaff'))
-                                            <a class="dropdown-item" href="/archiveCourse">{{ __('Archived Course') }}</a> 
+                                            <a class="dropdown-item" href="/showArchivedCourse">{{ __('Archived Course') }}</a> 
                                             @endif
                                             <a class="dropdown-item" href="/profile">{{ __('Profile') }}</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"

@@ -235,25 +235,29 @@ class CourseController extends Controller{
         return redirect('home');
     }
 
-    // function archiveCourse($course_id){
-    //     $course = Course::findOrFail($course_id);
-    //     //archive the course
-    //     $course->delete();
-    //     // retrive the list of archived courses
-    //     // $archivedCourse = Course::onlyTrashed()->paginate(10);
-    //     return redirect('home');
-    // }
+    function archiveCourse($course_id){
+        $course = Course::findOrFail($course_id);
+        $course->delete();
+        // pass course_id as a parameter when calling archiveCourse route
+        return redirect('home');
+    }
 
-    // function showArchivedCourse(){
-    //     $archivedCourse = Course::withTrashed()->paginate(10);
-    //     return view('archiveCourse',compact('archivedCourse'));
-    // }
+    function showArchivedCourse(){
+        //show archived courses
+        $archivedCourse = Course::onlyTrashed()->paginate(10);
+        return view('showArchivedCourse',compact('archivedCourse'));
+    }
 
-    // function restoreCourse($course_id){
-    //     $course = Course::withTrashed()->findOrFail($course_id);
-    //     $course->restore();
-    //     return redirect('archiveCourse');
-    // }
+    function restoreCourse($course_id){
+        $course = Course::withTrashed()->findOrFail($course_id);
+        // check if the course is actually softDelete
+        if($course->trashed()){
+            $course->restore();
+        }
+
+        // redirect to the showArchivedCourse once the restore button clicked
+        return redirect()->route('showArchivedCourse');
+    }
 
     function searchCourse(Request $req){
         $keyword = $req->input('keyword');

@@ -62,12 +62,16 @@ tr:hover {
 
 .courseName{
     padding-right:13px;
-    width:200px;
+    width:300px;
 }
 
 .desc{
     text-align:left;
     width: 700px;
+}
+
+.deleted_at{
+    width:300px;
 }
 
 .search-container {

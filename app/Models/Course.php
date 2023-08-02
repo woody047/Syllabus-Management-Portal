@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Course extends Model implements Auditable
 {
     use \OwenIt\Auditing\Auditable;
-    use HasFactory;
+    use HasFactory,SoftDeletes;
     //laravel will indicates that thers is no 'id' column in the course table
     //so it will assumes the primary key column in the table is named 'id' instead of 'course_id'
     //so we need to set protected primary key for course_id

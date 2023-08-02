@@ -32,7 +32,7 @@ Route::get('/showCourse/{course_id}',[CourseController::class,'showCourse'])->na
 Route::get('/editCourse/{course_id}',[CourseController::class,'passDataCourse'])->name('editCourse');
 Route::put('/saveCourse/{course_id}',[CourseController::class,'saveCourse'])->name('saveCourse');
 Route::get('/archiveCourse/{course_id}',[CourseController::class,'archiveCourse'])->name('archiveCourse');
-// Route::get('/archiveCourse',[CourseController::class,'showArchivedCourse'])->name('archiveCourse');
+Route::get('/showArchivedCourse',[CourseController::class,'showArchivedCourse'])->name('showArchivedCourse');
 Route::get('/restoreCourse/{course_id}', [CourseController::class, 'restoreCourse'])->name('restoreCourse');
 
 Route::get('/audits', [AuditController::class,'index']);
