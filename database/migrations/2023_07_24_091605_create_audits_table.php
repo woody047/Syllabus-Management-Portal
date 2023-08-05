@@ -32,6 +32,8 @@ class CreateAuditsTable extends Migration
             $table->string('user_agent', 1023)->nullable();
             $table->string('tags')->nullable();
             //need course de foreign key, pls add this shit
+            $table->unsignedBigInteger('course_id')->nullable();
+            $table->foreign('course_id')->references('course_id')->on('courses');
             $table->timestamps();
 
             $table->index([$morphPrefix . '_id', $morphPrefix . '_type']);

@@ -4,7 +4,7 @@
 
     <head>
         <link rel="stylesheet" href="{{ url('css/audit.css') }}" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">    
     </head>
 
     <div class="main">
@@ -26,6 +26,8 @@
                     @if (count($audits) > 0)
                         <thead>
                             <tr>
+                                <th scope="col" class="text-center">Course Code</th>
+                                <th scope="col" class="text-center">Course Name</th>
                                 <th scope="col" class="text-center">User</th>
                                 <th scope="col" class="text-center">Action</th>
                                 <th scope="col" class="text-center">Time</th>
@@ -36,6 +38,20 @@
                         <tbody id="audits">
                             @foreach ($audits as $audit)
                                 <tr>
+                                    <td>
+                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
+                                    , then proceed to display the course code and course name -->
+                                        @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                                            {{ $audit->auditable->course_code }}
+                                        @endif
+                                    </td>
+                                    <td>
+                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
+                                    , then proceed to display the course code and course name -->
+                                        @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                                            {{ $audit->auditable->course_name }}
+                                        @endif
+                                    </td>
                                     <td>{{ $audit->user->name }}</td>
                                     <td>{{ $audit->event }}</td>
                                     <td>{{ $audit->created_at }}</td>
