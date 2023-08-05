@@ -258,12 +258,62 @@
                                                 contribute to the development of the transferable skills.</p>
                         </td>
                     </tr>
+                    <!-- <tr>
+                        <td>11.</td>
+                        <td>
+                            <p class="courseInfo">
+                                Distribution of Student Learning Time (SLT):          
+                            </p>
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th rowspan="3">Course Content Outline</th>
+                                        <th rowspan="3">CO</th>
+                                        <th colspan="6">Teaching & Learning Activites</th>
+                                        <th rowspan="3">Total SLT</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Guided Learning (F2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Guided Learning (NF2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Independent Learning (NF2F)*</th>
+                                    </tr>
+                                    <tr>
+                                        <th>L</th>
+                                        <th>T</th>
+                                        <th>P</th>
+                                        <th>O</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    <tr>
+                                        <td><textarea type="text" name="" rows="5" cols="50" style="width:500px; height:200px;"></textarea></td>           
+                                        <td><input type="text" name="" style="width:100px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                        <td><input type="text" name="" style="width:20px"></input></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="addnremove-button">
+                                <button id="add-row" class="btn btn-primary" type="button">Add Row</button>
+                                <button id="remove-row" class="btn btn-danger" type="button">Remove Row</button>
+                            </div>
+                        </td>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
     </form>
 </body>
 </div>
+
+<script src="{{ asset('js/addbutton.js') }}"></script>
+<script src="{{ asset('js/removebutton.js') }}"></script>
+
 @endsection
 
 

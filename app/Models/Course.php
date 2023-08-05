@@ -16,6 +16,10 @@ class Course extends Model implements Auditable
     //so we need to set protected primary key for course_id
     protected $primaryKey = 'course_id';
 
+    protected $fillable = [
+        '11_CCO',
+    ];
+
     //a course belongs to one user
     public function getUser(){
         return $this->belongsTo(User::class);

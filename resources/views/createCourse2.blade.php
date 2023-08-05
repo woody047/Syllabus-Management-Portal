@@ -34,7 +34,7 @@
                             <table>  
                                 <thead>
                                     <tr>
-                                        <th rowspan="3" style="width:1000px;">Course Content Outline</th>
+                                        <th rowspan="3">Course Content Outline</th>
                                         <th rowspan="3">CO</th>
                                         <th colspan="6">Teaching & Learning Activites</th>
                                         <th rowspan="3">Total SLT</th>
@@ -53,8 +53,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><textarea type="text" name="9CO1_PO1" rows="5" cols="50" style="width:600px; height:200px;"></textarea></td>           
-                                        <td><input type="text" name="9CO1_PO1" style="width:20px"></input></td>
+                                        <td><textarea type="text" name="9CO1_PO1" rows="5" cols="50" style="width:500px; height:200px;"></textarea></td>           
+                                        <td><input type="text" name="9CO1_PO1" style="width:100px"></input></td>
                                         <td><input type="text" name="9CO1_PO2" style="width:20px"></input></td>
                                         <td><input type="text" name="9CO1_PO3" style="width:20px"></input></td>
                                         <td><input type="text" name="9CO1_PO4" style="width:20px"></input></td>
@@ -69,8 +69,12 @@
                     </tr>
                 </tbody>
             </table>
+            <button id="add-row" class="btn btn-primary">Add Row</button>
+            <button id="remove-row" class="btn btn-danger">Remove Row</button>
         </div>
     </form>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/addbutton.js') }}"></script>
 </body>
 </div>
 @endsection

@@ -91,3 +91,6 @@ tr:hover {
     width: 900px;
 }
 
+.addnremove-button{
+    float:right;
+}
