@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="{{url('css/createCourse.css')}}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <div class="main"> 
@@ -258,7 +260,7 @@
                                                 contribute to the development of the transferable skills.</p>
                         </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                         <td>11.</td>
                         <td>
                             <p class="courseInfo">
@@ -303,7 +305,7 @@
                                 <button id="remove-row" class="btn btn-danger" type="button">Remove Row</button>
                             </div>
                         </td>
-                    </tr> -->
+                    </tr>
                 </tbody>
             </table>
         </div>

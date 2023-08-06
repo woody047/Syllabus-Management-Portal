@@ -58,8 +58,8 @@ tr:hover {
 
 .create-container a {
     text-decoration:none;
-    padding: 18px;
-    background-color: #4CAF50;
+    padding: 20px;
+    background-color: #c0272f;
     border: none;
     border-radius:4px;
     color: white;
@@ -73,7 +73,7 @@ tr:hover {
 }
 
 .create-container a:hover {
-    background-color: #45a049;
+    background-color: #ad171f;
 }
 
 .No{

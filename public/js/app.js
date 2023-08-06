@@ -5108,6 +5108,37 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 __webpack_require__(/*! ./addbutton */ "./resources/js/addbutton.js");
 __webpack_require__(/*! ./removebutton */ "./resources/js/removebutton.js");
+__webpack_require__(/*! ./archivebutton */ "./resources/js/archivebutton.js");
+
+/***/ }),
+
+/***/ "./resources/js/archivebutton.js":
+/*!***************************************!*\
+  !*** ./resources/js/archivebutton.js ***!
+  \***************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  // Handle the click event on the archive link
+  $('.archive-link').click(function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+    var archiveUrl = $(this).attr('href'); // Get the archive URL from the link
+
+    // Open the modal when the link is clicked
+    $('#archiveModal').modal('show');
+
+    // Handle the click event on the "Archive" button in the modal
+    $('#confirmArchive').click(function () {
+      // Redirect to the archive URL
+      window.location.href = archiveUrl;
+    });
+  });
+
+  // Clean up the modal when it's hidden
+  $('#archiveModal').on('hidden.bs.modal', function () {
+    $('#confirmArchive').off('click'); // Remove the click event handler
+  });
+});
 
 /***/ }),
 

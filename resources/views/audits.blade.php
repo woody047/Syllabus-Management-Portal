@@ -5,6 +5,8 @@
     <head>
         <link rel="stylesheet" href="{{ url('css/audit.css') }}" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
 
     <div class="main">
@@ -56,8 +58,7 @@
                                     <td>{{ $audit->event }}</td>
                                     <td>{{ $audit->created_at }}</td>
                                     <td>
-                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOldValues{{ $audit->id }}" aria-expanded="false">
+                                        <button class="btn btn-primary expand-collapse-btn" data-target="#collapseOldValues{{ $audit->id }}" aria-expanded="false">
                                             Expand/Collapse
                                         </button>
                                         <div class="collapse" id="collapseOldValues{{ $audit->id }}">
@@ -72,8 +73,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <button class="btn btn-link" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseNewValues{{ $audit->id }}" aria-expanded="false">
+                                        <button class="btn btn-info expand-collapse-btn" data-target="#collapseNewValues{{ $audit->id }}" aria-expanded="false">
                                             Expand/Collapse
                                         </button>
                                         <div class="collapse" id="collapseNewValues{{ $audit->id }}">
@@ -97,4 +97,13 @@
             </div>
         </body>
     </div>
+
+<script>
+    $(document).ready(function() {
+        $(".expand-collapse-btn").click(function() {
+            const target = $(this).data("target");
+            $(target).collapse("toggle");
+        });
+    });
+</script>
 @endsection

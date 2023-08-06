@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="{{url('css/main.css')}}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <div class="main"> 
@@ -29,7 +31,7 @@
                     <td class="deleted_at">{{ $course->deleted_at }}</td>
                     <div class="btn">
                         <td>
-                            <a href="{{ route('restoreCourse',['course_id'=>$course->course_id]) }}">Restore</a>
+                            <a href="{{ route('restoreCourse',['course_id'=>$course->course_id]) }}" class="btn btn-secondary">Restore</a>
                         </td>
                     </div>
                 </tr>

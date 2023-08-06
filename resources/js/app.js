@@ -16,4 +16,5 @@ require('./components/Example');
 
 require('./addbutton');
 require('./removebutton');
+require('./archivebutton');
 

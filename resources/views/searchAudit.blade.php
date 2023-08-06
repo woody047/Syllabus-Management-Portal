@@ -4,6 +4,8 @@
 <head>
     <link rel="stylesheet" href="{{ url('css/audit.css') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <div class="main">
@@ -53,8 +55,7 @@
                 <td>{{ $audits->event }}</td>
                 <td>{{ $audits->created_at }}</td>
                 <td>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOldValues{{ $audits->id }}" aria-expanded="false">
+                    <button class="btn btn-primary expand-collapse-btn" data-target="#collapseOldValues{{ $audits->id }}" aria-expanded="false">
                         Expand/Collapse
                     </button>
                     <div class="collapse" id="collapseOldValues{{ $audits->id }}">
@@ -69,8 +70,7 @@
                     </div>
                 </td>
                 <td>
-                    <button class="btn btn-link" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseNewValues{{ $audits->id }}" aria-expanded="false">
+                    <button class="btn btn-info expand-collapse-btn" data-target="#collapseNewValues{{ $audits->id }}" aria-expanded="false">
                         Expand/Collapse
                     </button>
                     <div class="collapse" id="collapseNewValues{{ $audits->id }}">
@@ -86,15 +86,26 @@
                 </td>
                 </tr>
             @endforeach
-            <span>
-                {{$audit->links()}}
-            </span>
             </tbody>
         </table>
         </div>
         @else
             <p>No audit log found matching "{{$keyword}}"</p>
         @endif
+        <span>
+            {{$audit->links()}}
+        </span>
+
     </body>
 </div>
+
+<script>
+    $(document).ready(function () {
+        // Handle expand/collapse button click
+        $('.expand-collapse-btn').click(function () {
+            var target = $(this).data('target');
+            $(target).toggleClass('show');
+        });
+    });
+</script>
 @endsection
