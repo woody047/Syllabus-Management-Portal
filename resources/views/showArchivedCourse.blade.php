@@ -2,14 +2,18 @@
 @section('content')
 
 <head>
-    <link rel="stylesheet" href="{{url('css/main.css')}}" />
+    <link rel="stylesheet" href="{{url('css/archiveCourse.css')}}" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <div class="main"> 
 <body>
-    <h1>Archived Courses</h1>
+    <div class="search-container">
+        <h1>Archived Courses</h1>
+        <a href="/home">Back</a>
+    </div>
+
     <div class="table-container">
         <table>
             @if(count($archivedCourse)>0)

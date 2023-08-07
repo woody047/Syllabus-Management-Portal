@@ -259,13 +259,67 @@
                                                 contribute to the development of the transferable skills.</p>
                         </td>
                     </tr>
-
+                    <tr>
+                        <td>11.</td>
+                        <td>
+                            <p class="courseInfo">
+                                Distribution of Student Learning Time (SLT):          
+                            </p>
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th rowspan="3">Course Content Outline</th>
+                                        <th rowspan="3">CO</th>
+                                        <th colspan="6">Teaching & Learning Activites</th>
+                                        <th rowspan="3">Total SLT</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Guided Learning (F2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Guided Learning (NF2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Independent Learning (NF2F)*</th>
+                                    </tr>
+                                    <tr>
+                                        <th>L</th>
+                                        <th>T</th>
+                                        <th>P</th>
+                                        <th>O</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    <!-- loop through the existing rows and generate input fields for each attribute of each row. -->
+                                    @foreach($course->courseRows as $index => $row)
+                                    <tr>
+                                        <!-- additional input field in form for 'courseRowId[]' -->
+                                        <input type="hidden" name="courseRowId[]" value="{{ $row->id ?? '' }}">
+                                        <td><textarea type="text" name="courseOutline[]" rows="5" cols="50" style="width:500px; height:200px;">{{$row->courseOutline}}</textarea></td>           
+                                        <td><input type="text" name="CO[]" style="width:100px" value="{{$row->CO}}"></input></td>
+                                        <td><input type="text" name="L[]" style="width:20px" value="{{$row->L}}"></input></td>
+                                        <td><input type="text" name="T[]" style="width:20px" value="{{$row->T}}"></input></td>
+                                        <td><input type="text" name="P[]" style="width:20px" value="{{$row->P}}"></input></td>
+                                        <td><input type="text" name="O[]" style="width:20px" value="{{$row->O}}"></input></td>
+                                        <td><input type="text" name="GuidedLearning[]" style="width:20px" value="{{$row->GuidedLearning}}"></input></td>
+                                        <td><input type="text" name="IndependentLearning[]" style="width:20px" value="{{$row->IndependentLearning}}"></input></td>
+                                        <td><input type="text" name="TotalSLT[]" style="width:20px" value="{{$row->TotalSLT}}"></input></td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="addnremove-button">
+                                <button id="add-row" class="btn btn-primary" type="button">Add Row</button>
+                                <button id="remove-row" class="btn btn-danger" type="button">Remove Row</button>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </form>
 </body>
 </div>
+
+<script src="{{ asset('js/addbutton.js') }}"></script>
+<script src="{{ asset('js/removebutton.js') }}"></script>
+
 @endsection
 
 

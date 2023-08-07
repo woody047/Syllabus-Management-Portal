@@ -37,15 +37,21 @@ tr:hover {
     background-color: #eee;
 }
 
-
-.create-container {
+.search-container {
     display:flex;
     justify-content:space-between;
     margin-bottom: 10px;
     padding-bottom:10px;
 }
 
-.create-container button {
+.search-container input[type=text] {
+    padding: 18px;
+    border: none;
+    border-radius: 4px;
+    width: 350px;
+}
+
+.search-container button {
     padding: 18px;
     background-color: #4CAF50;
     border: none;
@@ -56,7 +62,7 @@ tr:hover {
     margin-left:5px;
 }
 
-.create-container a {
+.search-container a {
     text-decoration:none;
     padding: 18px;
     background-color: #c0272f;
@@ -68,31 +74,19 @@ tr:hover {
     margin-left:5px;
 }
 
-.create-container button:hover {
+.search-container button:hover {
     background-color: #45a049;
 }
 
-.create-container a:hover {
-    background-color:  #ad171f;
+.search-container a:hover {
+    background-color: #ad171f;
 }
 
-.No{
-    width: 70px;
-}
-
-.table-container, table{
-    max-height: 550px; 
+.table-container{
     overflow-y: scroll;
     overflow-x: auto;
 }
 
-.courseInfo{
-    text-align:left;
-    width: 900px;
+.w-5{
+display: none;
 }
-
-.addnremove-button{
-    float:right;
-}
-
-

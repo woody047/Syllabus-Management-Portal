@@ -261,6 +261,52 @@
                                                 contribute to the development of the transferable skills.</p>
                         </td>
                     </tr>
+                    <tr>
+                        <td>11.</td>
+                        <td>
+                            <p class="courseInfo">
+                                Distribution of Student Learning Time (SLT):          
+                            </p>
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th rowspan="3">Course Content Outline</th>
+                                        <th rowspan="3">CO</th>
+                                        <th colspan="6">Teaching & Learning Activites</th>
+                                        <th rowspan="3">Total SLT</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Guided Learning (F2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Guided Learning (NF2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Independent Learning (NF2F)*</th>
+                                    </tr>
+                                    <tr>
+                                        <th>L</th>
+                                        <th>T</th>
+                                        <th>P</th>
+                                        <th>O</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    @if($course)
+                                        @foreach($course->courseRows as $row)
+                                        <tr>
+                                            <td>{{ $row->courseOutline }}</td>           
+                                            <td>{{ $row->CO }}</td>
+                                            <td>{{ $row->L }}</td>
+                                            <td>{{ $row->T }}</td>
+                                            <td>{{ $row->P }}</td>
+                                            <td>{{ $row->O }}</td>
+                                            <td>{{ $row->GuidedLearning }}</td>
+                                            <td>{{ $row->IndependentLearning }}</td>
+                                            <td>{{ $row->TotalSLT }}</td>
+                                        </tr>
+                                        @endforeach
+                                    @endif
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         @else

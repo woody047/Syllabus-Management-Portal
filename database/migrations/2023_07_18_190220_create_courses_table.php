@@ -119,7 +119,6 @@ class CreateCoursesTable extends Migration
             $table->boolean('10TS8_N')->default(null);
             $table->boolean('10TS9_Y')->default(null);
             $table->boolean('10TS9_N')->default(null);
-            //11
             //foreign key (user_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

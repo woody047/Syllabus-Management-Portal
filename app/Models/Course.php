@@ -23,7 +23,9 @@ class Course extends Model implements AuditableContract
         return $this->belongsTo(User::class);
     }
 
-    // public function auditLogs(){
-    //     return $this->hasMany(Audit::class,'course_id');
-    // }
+    //specifies the foreign key column name to ensure the relationship with the 'courseRows' model is correctly defined
+    public function courseRows()
+    {
+        return $this->hasMany(CourseRow::class,'course_id');
+    }
 }

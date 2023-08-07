@@ -29,13 +29,4 @@ class AuditController extends Controller
 
         return view('searchAudit',compact('audit','keyword'));
     }
-
-
-    // public function showAudits(){
-    //     // Retrieve all courses and their corresponding audits
-    //     $coursesWithAudits = Course::with('user','auditLogs')->get();
-
-    //      // Pass the data to the 'audits.blade.php' view
-    //     return view('audits', compact('coursesWithAudits'));
-    // }
 }
