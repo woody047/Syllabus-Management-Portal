@@ -307,6 +307,118 @@
                             </table>
                         </td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th rowspan="3">Course Content Outline</th>
+                                        <th rowspan="3">CO</th>
+                                        <th colspan="6">Teaching & Learning Activites</th>
+                                        <th rowspan="3">Total SLT</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Guided Learning (F2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Guided Learning (NF2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Independent Learning (NF2F)*</th>
+                                    </tr>
+                                    <tr>
+                                        <th>L</th>
+                                        <th>T</th>
+                                        <th>P</th>
+                                        <th>O</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">Total Notional Hours</td>
+                                        <td>{{ $course->{'totalNotionalHours_L'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_T'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_P'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_O'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_GuidedLearning'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_IndependentLearning'} }}</td>
+                                        <td>{{ $course->{'totalNotionalHours_TotalSLT'} }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table>
+                                <th>Continuous Assessment</th> 
+                                <th>Percentage(%)</th> 
+                                <th>F2F</th> 
+                                <th>NF2F</th> 
+                                <th>Total SLT</th> 
+                                <tr>
+                                    <td>Test, Practical Assessment, Assignment</td>
+                                    <td>{{ $course->{'CA_Percentage'} }}</td>
+                                    <td>{{ $course->{'CA_F2F'} }}</td>
+                                    <td>{{ $course->{'CA_NF2F'} }}</td>
+                                    <td>{{ $course->{'CA_TotalSLT'} }}</td>
+                                </tr>
+                                <th>Continuous Assessment</th> 
+                                <th>Percentage(%)</th> 
+                                <th>F2F</th> 
+                                <th>NF2F</th> 
+                                <th>Total SLT</th> 
+                                <tr>
+                                    <td>Final Examination</td>
+                                    <td>{{ $course->{'FA_Percentage'} }}</td>
+                                    <td>{{ $course->{'FA_F2F'} }}</td>
+                                    <td>{{ $course->{'FA_NF2F'} }}</td>
+                                    <td>{{ $course->{'FA_TotalSLT'} }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">GRAND TOTAL SLT</td>
+                                    <td>{{ $course->{'grand_total_SLT'} }}</td>
+                                </tr>            
+                            </table>
+                            <br>
+                            <p class="courseInfo">* L = Lecture, T = Tutorial, P = Practical, O = Others, * F2F = Face-to-Face, NF2F = Non Face-to-Face</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12.</td>
+                        <td class="courseInfo">
+                            <label>Special Requirement or Resources to Deliver the Course (e.g., software, nursery, computer laboratory, simulation room)</label><br>
+                            {{ $course->{'special_requirement'} }}                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13.</td>
+                        <td class="courseInfo">
+                            <label>Main References:</label><br>
+                            {{ $course->{'main_references'} }}                            
+                            <label>Additional References:</label><br>
+                            {{ $course->{'additional_references'} }}                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14.</td>
+                        <td class="courseInfo">
+                            <label>Other Additional Information</label><br>
+                            {{ $course->{'other_addition_info'} }}                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15.</td>
+                        <td class="courseInfo">
+                            <label>Date of Senate Approval:&nbsp;</label>
+                            {{ $course->{'date_of_senate_approval'} }}                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16.</td>
+                        <td class="courseInfo">
+                            <label>Effective Trimester:&nbsp;</label>
+                            {{ $course->{'effective_trimester'} }}                        
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         @else

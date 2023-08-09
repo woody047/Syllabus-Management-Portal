@@ -119,8 +119,8 @@ tr:hover {
     background-color: #45a049;
 }
 
-.table-container{
-    max-height: 600px; 
+.table-container, table{
+    max-height: 590px; 
     overflow-y: scroll;
     overflow-x: auto;
 }

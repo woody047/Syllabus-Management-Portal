@@ -288,15 +288,15 @@
                                 </thead>
                                 <tbody id="table-body">
                                     <tr>
-                                        <td><textarea type="text" name="courseOutline[]" rows="5" cols="50" style="width:500px; height:200px;"></textarea></td>           
-                                        <td><input type="text" name="CO[]" style="width:100px"></input></td>
-                                        <td><input type="text" name="L[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="T[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="P[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="O[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="GuidedLearning[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="IndependentLearning[]" style="width:20px"></input></td>
-                                        <td><input type="text" name="TotalSLT[]" style="width:20px"></input></td>
+                                        <td><textarea type="text" name="courseOutline[]" rows="5" cols="50" style="width:500px; height:200px;" required></textarea></td>           
+                                        <td><input type="text" name="CO[]" style="width:100px" required></input></td>
+                                        <td><input type="text" name="L[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="T[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="P[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="O[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="GuidedLearning[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="IndependentLearning[]" style="width:20px" required></input></td>
+                                        <td><input type="text" name="TotalSLT[]" style="width:20px" required></input></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -304,6 +304,118 @@
                                 <button id="add-row" class="btn btn-primary" type="button">Add Row</button>
                                 <button id="remove-row" class="btn btn-danger" type="button">Remove Row</button>
                             </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table>  
+                                <thead>
+                                    <tr>
+                                        <th rowspan="3">Course Content Outline</th>
+                                        <th rowspan="3">CO</th>
+                                        <th colspan="6">Teaching & Learning Activites</th>
+                                        <th rowspan="3">Total SLT</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="4">Guided Learning (F2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Guided Learning (NF2F)*</th>
+                                        <th rowspan="2" style="max-width:150px;">Independent Learning (NF2F)*</th>
+                                    </tr>
+                                    <tr>
+                                        <th>L</th>
+                                        <th>T</th>
+                                        <th>P</th>
+                                        <th>O</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">Total Notional Hours</td>
+                                        <td><input type="text" name="totalNotionalHours_L" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_T" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_P" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_O" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_GuidedLearning" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_IndependentLearning" style="width:20px" required></input></td>
+                                        <td><input type="text" name="totalNotionalHours_TotalSLT" style="width:20px" required></input></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <table>
+                                <th>Continuous Assessment</th> 
+                                <th>Percentage(%)</th> 
+                                <th>F2F</th> 
+                                <th>NF2F</th> 
+                                <th>Total SLT</th> 
+                                <tr>
+                                    <td>Test, Practical Assessment, Assignment</td>
+                                    <td><input type="text" name="CA_Percentage" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="CA_F2F" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="CA_NF2F" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="CA_TotalSLT" style="width:50px;" required></input></td>
+                                </tr>
+                                <th>Continuous Assessment</th> 
+                                <th>Percentage(%)</th> 
+                                <th>F2F</th> 
+                                <th>NF2F</th> 
+                                <th>Total SLT</th> 
+                                <tr>
+                                    <td>Final Examination</td>
+                                    <td><input type="text" name="FA_Percentage" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="FA_F2F" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="FA_NF2F" style="width:50px;" required></input></td>
+                                    <td><input type="text" name="FA_TotalSLT" style="width:50px;" required></input></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">GRAND TOTAL SLT</td>
+                                    <td><input type="text" name="grand_total_SLT" style="width:50px" required></input></td>
+                                </tr>            
+                            </table>
+                            <br>
+                            <p class="courseInfo">* L = Lecture, T = Tutorial, P = Practical, O = Others, * F2F = Face-to-Face, NF2F = Non Face-to-Face</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12.</td>
+                        <td class="courseInfo">
+                            <label>Special Requirement or Resources to Deliver the Course (e.g., software, nursery, computer laboratory, simulation room)</label><br>
+                            <input type="text" name="special_requirement" class="tab-space" style="width:1100px;" required></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13.</td>
+                        <td class="courseInfo">
+                            <label>Main References:</label><br>
+                            <textarea name="main_references" style="width:1100px;height:100px;" required></textarea><br>
+                            <label>Additional References:</label><br>
+                            <textarea name="additional_references" style="width:1100px;height:100px;" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14.</td>
+                        <td class="courseInfo">
+                            <label>Other Additional Information</label><br>
+                            <input type="text" name="other_addition_info" class="tab-space" style="width:1100px;" required></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15.</td>
+                        <td class="courseInfo">
+                            <label>Date of Senate Approval:&nbsp;</label>
+                            <input type="text" name="date_of_senate_approval" class="tab-space" style="width:100px;" required></input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16.</td>
+                        <td class="courseInfo">
+                            <label>Effective Trimester:&nbsp;</label>
+                            <input type="text" name="effective_trimester" class="tab-space" style="width:100px;" required></input>
                         </td>
                     </tr>
                 </tbody>

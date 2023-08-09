@@ -119,6 +119,36 @@ class CreateCoursesTable extends Migration
             $table->boolean('10TS8_N')->default(null);
             $table->boolean('10TS9_Y')->default(null);
             $table->boolean('10TS9_N')->default(null);
+            //11 part 2
+            $table->string('totalNotionalHours_L',50);
+            $table->string('totalNotionalHours_T',50);
+            $table->string('totalNotionalHours_P',50);
+            $table->string('totalNotionalHours_O',50);
+            $table->string('totalNotionalHours_GuidedLearning',50);
+            $table->string('totalNotionalHours_IndependentLearning',50);
+            $table->string('totalNotionalHours_TotalSLT',50);
+            //11 part 3
+            $table->string('CA_Percentage',50);
+            $table->string('CA_F2F',50);
+            $table->string('CA_NF2F',50);
+            $table->string('CA_TotalSLT',50);
+            $table->string('FA_Percentage',50);
+            $table->string('FA_F2F',50);
+            $table->string('FA_NF2F',50);
+            $table->string('FA_TotalSLT',50);
+            $table->string('grand_total_SLT',50);
+            //12
+            $table->string('special_requirement',255);
+            //13
+            $table->string('main_references',255);
+            $table->string('additional_references',255);           
+            //14
+            $table->string('other_addition_info',255);                       
+            //15
+            $table->string('date_of_senate_approval',50);                               
+            //16
+            $table->string('effective_trimester',50);                               
+
             //foreign key (user_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

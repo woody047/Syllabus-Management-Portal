@@ -128,10 +128,39 @@ class CourseController extends Controller{
             $course->{'10TS8_N'} = $req->has('10TS8_N');
             $course->{'10TS9_Y'} = $req->has('10TS9_Y');
             $course->{'10TS9_N'} = $req->has('10TS9_N');
+            //11 part 2
+            $course->{'totalNotionalHours_L'} = $req->{'totalNotionalHours_L'};
+            $course->{'totalNotionalHours_T'} = $req->{'totalNotionalHours_T'};
+            $course->{'totalNotionalHours_P'} = $req->{'totalNotionalHours_P'};
+            $course->{'totalNotionalHours_O'} = $req->{'totalNotionalHours_O'};
+            $course->{'totalNotionalHours_GuidedLearning'} = $req->{'totalNotionalHours_GuidedLearning'};
+            $course->{'totalNotionalHours_IndependentLearning'} = $req->{'totalNotionalHours_IndependentLearning'};
+            $course->{'totalNotionalHours_TotalSLT'} = $req->{'totalNotionalHours_TotalSLT'};
+            //11 part 3
+            $course->{'CA_Percentage'} = $req->{'CA_Percentage'};
+            $course->{'CA_F2F'} = $req->{'CA_F2F'};
+            $course->{'CA_NF2F'} = $req->{'CA_NF2F'};
+            $course->{'CA_TotalSLT'} = $req->{'CA_TotalSLT'};
+            $course->{'FA_Percentage'} = $req->{'FA_Percentage'};
+            $course->{'FA_F2F'} = $req->{'FA_F2F'};
+            $course->{'FA_NF2F'} = $req->{'FA_NF2F'};
+            $course->{'FA_TotalSLT'} = $req->{'FA_TotalSLT'};
+            $course->{'grand_total_SLT'} = $req->{'grand_total_SLT'};
+            //12
+            $course->{'special_requirement'} = $req->{'special_requirement'};
+            //13
+            $course->{'main_references'} = $req->{'main_references'};
+            $course->{'additional_references'} = $req->{'additional_references'};
+            //14
+            $course->{'other_addition_info'} = $req->{'other_addition_info'};
+            //15
+            $course->{'date_of_senate_approval'} = $req->{'date_of_senate_approval'};            
+            //16
+            $course->{'effective_trimester'} = $req->{'effective_trimester'};            
             $course->save();
         }
 
-
+        //11 part 1
         // loop through the dynamically genereated rows and associate them with course_id
         // which means the multiple rows will only refer to the particular course_id
         $rowcount = count($req->courseOutline);
@@ -259,11 +288,41 @@ class CourseController extends Controller{
         $course->{'10TS8_N'} = $req->has('10TS8_N');
         $course->{'10TS9_Y'} = $req->has('10TS9_Y');
         $course->{'10TS9_N'} = $req->has('10TS9_N');
+        //11 part 2
+        $course->{'totalNotionalHours_L'} = $req->{'totalNotionalHours_L'};
+        $course->{'totalNotionalHours_T'} = $req->{'totalNotionalHours_T'};
+        $course->{'totalNotionalHours_P'} = $req->{'totalNotionalHours_P'};
+        $course->{'totalNotionalHours_O'} = $req->{'totalNotionalHours_O'};
+        $course->{'totalNotionalHours_GuidedLearning'} = $req->{'totalNotionalHours_GuidedLearning'};
+        $course->{'totalNotionalHours_IndependentLearning'} = $req->{'totalNotionalHours_IndependentLearning'};
+        $course->{'totalNotionalHours_TotalSLT'} = $req->{'totalNotionalHours_TotalSLT'};
+        //11 part 3
+        $course->{'CA_Percentage'} = $req->{'CA_Percentage'};
+        $course->{'CA_F2F'} = $req->{'CA_F2F'};
+        $course->{'CA_NF2F'} = $req->{'CA_NF2F'};
+        $course->{'CA_TotalSLT'} = $req->{'CA_TotalSLT'};
+        $course->{'FA_Percentage'} = $req->{'FA_Percentage'};
+        $course->{'FA_F2F'} = $req->{'FA_F2F'};
+        $course->{'FA_NF2F'} = $req->{'FA_NF2F'};
+        $course->{'FA_TotalSLT'} = $req->{'FA_TotalSLT'};
+        $course->{'grand_total_SLT'} = $req->{'grand_total_SLT'};
+        //12
+        $course->{'special_requirement'} = $req->{'special_requirement'};
+        //13
+        $course->{'main_references'} = $req->{'main_references'};
+        $course->{'additional_references'} = $req->{'additional_references'};
+        //14
+        $course->{'other_addition_info'} = $req->{'other_addition_info'};
+        //15
+        $course->{'date_of_senate_approval'} = $req->{'date_of_senate_approval'};            
+        //16
+        $course->{'effective_trimester'} = $req->{'effective_trimester'};            
+        
         $course->save();
 
-         // Retrieve the IDs of rows being deleted from the HTML table
-         // array_diff function used to find the IDs of rows that exist in the database
-         // but are not present in the form data
+        // Retrieve the IDs of rows being deleted from the HTML table
+        // array_diff function used to find the IDs of rows that exist in the database
+        // but are not present in the form data
         $deletedRowIds = array_diff($course->courseRows->pluck('id')->toArray(), $req->courseRowId);
         // Loop through the dynamically generated rows
         $rowcount = count($req->courseOutline);
@@ -280,7 +339,6 @@ class CourseController extends Controller{
             // Set course_id for new rows
             $courseRow->course_id = $course->course_id; 
         }
-
         // Update or set the attributes for the courseRow
         $courseRow->courseOutline = $req->courseOutline[$i];
         $courseRow->CO = $req->CO[$i];
@@ -291,7 +349,6 @@ class CourseController extends Controller{
         $courseRow->GuidedLearning = $req->GuidedLearning[$i];
         $courseRow->IndependentLearning = $req->IndependentLearning[$i];
         $courseRow->TotalSLT = $req->TotalSLT[$i];
-
         // whereIn is used to delete rows that were removed from the HTML table
         CourseRow::whereIn('id', $deletedRowIds)->delete();
         // Save the courseRow data

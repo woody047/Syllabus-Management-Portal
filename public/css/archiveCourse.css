@@ -90,3 +90,9 @@ tr:hover {
 .w-5{
 display: none;
 }
+
+.table-container, table{
+    max-height: 590px; 
+    overflow-y: scroll;
+    overflow-x: auto;
+}
