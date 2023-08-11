@@ -29,13 +29,16 @@ class AuditController extends Controller
                     $query->where('course_name', 'like', '%' . $keyword . '%')
                           ->orWhere('course_code', 'like', '%' . $keyword . '%');
                 })
-                ->orWhereHas('auditable.course', function ($query) use ($keyword) {
+                ->orWhereHas('auditable.courseRows', function ($query) use ($keyword) {
+                    $query->where('course_name', 'like', '%' . $keyword . '%')
+                          ->orWhere('course_code', 'like', '%' . $keyword . '%');
+                })
+                ->orWhereHas('auditable.infoOnPracRows', function ($query) use ($keyword) {
                     $query->where('course_name', 'like', '%' . $keyword . '%')
                           ->orWhere('course_code', 'like', '%' . $keyword . '%');
                 });
             })
             ->paginate(10);
-    
         return view('searchAudit', compact('audit', 'keyword'));
     }
 }
