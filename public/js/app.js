@@ -5085,6 +5085,27 @@ $(document).ready(function () {
 
 /***/ }),
 
+/***/ "./resources/js/addbutton_for_info_on_prac.js":
+/*!****************************************************!*\
+  !*** ./resources/js/addbutton_for_info_on_prac.js ***!
+  \****************************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  var rowCount = 0;
+  // Handle the "Add" button click event
+  $('#add-row-for-info-on-prac').click(function () {
+    rowCount++;
+    // Create a new row with input fields
+    var row = "\n        <tr>\n            <td><input type=\"text\" name=\"lab[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"co[]\" style=\"width:100px\" required></input></td>\n            <td><textarea type=\"text\" name=\"activity[]\" rows=\"5\" cols=\"50\" style=\"width:900px; height:200px;float:left;\" required></textarea></td>           \n            <td><input type=\"text\" name=\"contact_hours[]\" style=\"width:20px\" required></input></td>\n        </tr>\n";
+
+    // Append the new row to the table body
+    $('#table-body-info-on-prac').append(row);
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -5108,6 +5129,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
 __webpack_require__(/*! ./addbutton */ "./resources/js/addbutton.js");
 __webpack_require__(/*! ./removebutton */ "./resources/js/removebutton.js");
+__webpack_require__(/*! ./addbutton_for_info_on_prac */ "./resources/js/addbutton_for_info_on_prac.js");
+__webpack_require__(/*! ./removebutton_for_info_on_prac */ "./resources/js/removebutton_for_info_on_prac.js");
 __webpack_require__(/*! ./archivebutton */ "./resources/js/archivebutton.js");
 
 /***/ }),
@@ -5236,6 +5259,22 @@ $(document).ready(function () {
   $('#remove-row').click(function () {
     // Remove the last row from the table body
     $('#table-body tr:last-child').remove();
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/removebutton_for_info_on_prac.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/removebutton_for_info_on_prac.js ***!
+  \*******************************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  // Handle the "Remove" button click event
+  $('#remove-row-for-info-on-prac').click(function () {
+    // Remove the last row from the table body
+    $('#table-body-info-on-prac tr:last-child').remove();
   });
 });
 

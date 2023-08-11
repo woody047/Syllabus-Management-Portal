@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\CourseRow;
+use App\Models\InfoOnPracRow;
 use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller{
@@ -180,6 +181,23 @@ class CourseController extends Controller{
             $courseRow->TotalSLT = $req->TotalSLT[$i];
             $courseRow->save();
         }
+
+        //last part
+        // loop through the dynamically genereated rows and associate them with course_id
+        // which means the multiple rows will only refer to the particular course_id
+        $rowcount = count($req->lab);
+        for ($i=0;$i<$rowcount;$i++){
+            $infoOnPracRow = new InfoOnPracRow;
+            //use the same course_id for all rows
+            $infoOnPracRow->course_id = $course->course_id;
+            //last part
+            $infoOnPracRow->lab = $req->lab[$i];
+            $infoOnPracRow->co = $req->co[$i];
+            $infoOnPracRow->activity = $req->activity[$i];
+            $infoOnPracRow->contact_hours = $req->contact_hours[$i];
+            $infoOnPracRow->save();
+        }
+
         return redirect("home");
     }
 
@@ -354,6 +372,25 @@ class CourseController extends Controller{
         // Save the courseRow data
         $courseRow->save();
         }
+
+        //last part - information on practical
+        $deletedInfoOnPracIds = array_diff($course->infoOnPracRows->pluck('id')->toArray(), $req->infoOnPracRowId);
+        $rowcount = count($req->lab);
+        for ($i = 0; $i < $rowcount; $i++) {
+        if (isset($req->infoOnPracRowId[$i])) {
+            $infoOnPracRow = InfoOnPracRow::find($req->infoOnPracRowId[$i]);
+        } else {
+            $infoOnPracRow = new InfoOnPracRow;
+            $infoOnPracRow->course_id = $course->course_id; 
+        }
+        $infoOnPracRow->lab = $req->lab[$i];
+        $infoOnPracRow->co = $req->co[$i];
+        $infoOnPracRow->activity = $req->activity[$i];
+        $infoOnPracRow->contact_hours = $req->contact_hours[$i];
+        InfoOnPracRow::whereIn('id', $deletedInfoOnPracIds)->delete();
+        $infoOnPracRow->save();
+        }
+
         return redirect('home');
     }
 

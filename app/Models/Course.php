@@ -26,6 +26,10 @@ class Course extends Model implements AuditableContract
     //specifies the foreign key column name to ensure the relationship with the 'courseRows' model is correctly defined
     public function courseRows()
     {
-        return $this->hasMany(CourseRow::class,'course_id');
+        return $this->hasMany(CourseRow::class,'course_id','course_id');
+    }
+
+    public function infoOnPracRows(){
+        return $this->hasMany(InfoOnPracRow::class,'course_id','course_id');
     }
 }

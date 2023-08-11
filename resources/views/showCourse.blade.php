@@ -291,7 +291,7 @@
                                     @if($course)
                                         @foreach($course->courseRows as $row)
                                         <tr>
-                                            <td>{{ $row->courseOutline }}</td>           
+                                            <td style="text-align:left;">{!! nl2br(e(str_replace(['{', '}'], '', $row->courseOutline))) !!}</td>           
                                             <td>{{ $row->CO }}</td>
                                             <td>{{ $row->L }}</td>
                                             <td>{{ $row->T }}</td>
@@ -393,9 +393,9 @@
                         <td>13.</td>
                         <td class="courseInfo">
                             <label>Main References:</label><br>
-                            {{ $course->{'main_references'} }}                            
+                            {!! nl2br(e(str_replace(['{', '}'], '', $course->main_references))) !!}<br>                            
                             <label>Additional References:</label><br>
-                            {{ $course->{'additional_references'} }}                        
+                            {!! nl2br(e(str_replace(['{', '}'], '', $course->additional_references))) !!}<br>                            
                         </td>
                     </tr>
                     <tr>
@@ -419,6 +419,36 @@
                             {{ $course->{'effective_trimester'} }}                        
                         </td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td class="courseInfo">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="4">Information on Practical</th>
+                                </tr>
+                                <tr>
+                                    <th>Lab</th>
+                                    <th>CO</th>
+                                    <th>Activity</th>
+                                    <th>Contact Hours</th>
+                                </tr>
+                                </thead>
+                                <tbody id="table-body-info-on-prac">
+                                    @if($course)
+                                        @foreach($course->infoOnPracRows as $inforow)
+                                        <tr>
+                                            <td>{{ $inforow->lab }}</td>
+                                            <td>{{ $inforow->co }}</td>
+                                            <td style="text-align:left;">{!! nl2br(e(str_replace(['{', '}'], '', $inforow->activity))) !!}</td>           
+                                            <td>{{ $inforow->contact_hours }}</td>
+                                        </tr>
+                                        @endforeach
+                                    @endif
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr> 
                 </tbody>
             </table>
         @else

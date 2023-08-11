@@ -422,6 +422,40 @@
                             <input type="text" name="effective_trimester" class="tab-space" style="width:100px;" value="{{$course->effective_trimester}}" required></input>
                         </td>
                     </tr>
+                    <tr>
+                        <td></td>
+                        <td class="courseInfo">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th colspan="4">Information on Practical</th>
+                                </tr>
+                                <tr>
+                                    <th>Lab</th>
+                                    <th>CO</th>
+                                    <th>Activity</th>
+                                    <th>Contact Hours</th>
+                                </tr>
+                                </thead>
+                                <tbody id="table-body-info-on-prac">
+                                    <!-- loop through the existing rows and generate input fields for each attribute of each row. -->
+                                    @foreach($course->infoOnPracRows as $index => $row)
+                                    <tr>
+                                        <input type="hidden" name="infoOnPracRowId[]" value="{{ $row->id ?? '' }}" required>
+                                        <td><input type="text" name="lab[]" style="width:20px" value="{{$row->lab}}" required></input></td>
+                                        <td><input type="text" name="co[]" style="width:100px" value="{{$row->co}}" required></input></td>
+                                        <td><textarea type="text" name="activity[]" rows="5" cols="50" style="width:900px; height:200px;float:left;" required>{{$row->activity}}</textarea></td>           
+                                        <td><input type="text" name="contact_hours[]" style="width:20px" value="{{$row->contact_hours}}" required></input></td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="addnremove-button-for-info-on-prac">
+                                <button id="add-row-for-info-on-prac" class="btn btn-primary" type="button">Add Row</button>
+                                <button id="remove-row-for-info-on-prac" class="btn btn-danger" type="button">Remove Row</button>
+                            </div>
+                        </td>
+                    </tr> 
                 </tbody>
             </table>
         </div>
@@ -431,6 +465,8 @@
 
 <script src="{{ asset('js/addbutton.js') }}"></script>
 <script src="{{ asset('js/removebutton.js') }}"></script>
+<script src="{{ asset('js/addbutton_for_info_on_prac.js') }}"></script>
+<script src="{{ asset('js/removebutton_for_info_on_prac.js') }}"></script>
 
 @endsection
 

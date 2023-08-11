@@ -40,16 +40,32 @@
                 <td>
                 <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
                 , then proceed to display the course code and course name -->
-                    @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
+                @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
                         {{ $audits->auditable->course_code }}
-                    @endif
+                    @elseif ($audits->auditable_type === 'App\Models\CourseRow' && $audits->auditable)
+                        @if ($audits->auditable->course)
+                            {{ $audits->auditable->course->course_code }}<br>(Distribution of Student Learning Time)
+                        @endif                                       
+                    @elseif ($audits->auditable_type === 'App\Models\InfoOnPracRow' && $audits->auditable)
+                        @if ($audits->auditable->course)
+                            {{ $audits->auditable->course->course_code }}<br>(Info On Practical)
+                        @endif
+                    @endif                                    
                 </td>
                 <td>
                 <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
                 , then proceed to display the course code and course name -->
-                    @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
-                        {{ $audits->auditable->course_name }}
+                @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
+                    {{ $audits->auditable->course_name }}
+                @elseif ($audits->auditable_type === 'App\Models\CourseRow' && $audits->auditable)
+                    @if ($audits->auditable->course)
+                        {{ $audits->auditable->course->course_name }}<br>(Distribution of Student Learning Time)
                     @endif
+                @elseif ($audits->auditable_type === 'App\Models\InfoOnPracRow' && $audits->auditable)
+                    @if ($audits->auditable->course)
+                        {{ $audits->auditable->course->course_name }}<br>(Info On Practical)
+                    @endif
+                @endif
                 </td>
                 <td>{{ $audits->user->name }}</td>
                 <td>{{ $audits->event }}</td>

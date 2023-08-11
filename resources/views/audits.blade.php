@@ -40,20 +40,36 @@
                         <tbody id="audits">
                             @foreach ($audits as $audit)
                                 <tr>
-                                    <td>
-                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
-                                    , then proceed to display the course code and course name -->
-                                        @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
-                                            {{ $audit->auditable->course_code }}
+                                <td>
+                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present,
+                                    then proceed to display the course code and course name -->
+                                    @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                                        {{ $audit->auditable->course_code }}
+                                    @elseif ($audit->auditable_type === 'App\Models\CourseRow' && $audit->auditable)
+                                        @if ($audit->auditable->course)
+                                            {{ $audit->auditable->course->course_code }}<br>(Distribution of Student Learning Time)
+                                        @endif                                       
+                                    @elseif ($audit->auditable_type === 'App\Models\InfoOnPracRow' && $audit->auditable)
+                                        @if ($audit->auditable->course)
+                                            {{ $audit->auditable->course->course_code }}<br>(Information On Practical)
                                         @endif
-                                    </td>
-                                    <td>
-                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
-                                    , then proceed to display the course code and course name -->
-                                        @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
-                                            {{ $audit->auditable->course_name }}
+                                    @endif                                    
+                                </td>
+                                <td>
+                                    <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present,
+                                    then proceed to display the course code and course name -->
+                                    @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                                        {{ $audit->auditable->course_name }}
+                                    @elseif ($audit->auditable_type === 'App\Models\CourseRow' && $audit->auditable)
+                                        @if ($audit->auditable->course)
+                                            {{ $audit->auditable->course->course_name }}<br>(Distribution of Student Learning Time)
                                         @endif
-                                    </td>
+                                    @elseif ($audit->auditable_type === 'App\Models\InfoOnPracRow' && $audit->auditable)
+                                        @if ($audit->auditable->course)
+                                            {{ $audit->auditable->course->course_name }}<br>(Information On Practical)
+                                        @endif
+                                    @endif
+                                </td>                                    
                                     <td>{{ $audit->user->name }}</td>
                                     <td>{{ $audit->event }}</td>
                                     <td>{{ $audit->created_at }}</td>
@@ -94,6 +110,9 @@
                         <p>No audit logs recorded</p>
                     @endif
                 </table>
+                <span>
+                     {{$audits->links()}}
+                </span>
             </div>
         </body>
     </div>

@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home',[CourseController::class,'showlist']);
 Route::view('/createCourse','createCourse');
+Route::view('/profile','profile');
 
 Route::post("createCourse",[CourseController::class,'createCourse']);
 //set name for the route, easy to reference in other parts
