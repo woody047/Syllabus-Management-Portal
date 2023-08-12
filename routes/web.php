@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\AuditController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +35,14 @@ Route::put('/saveCourse/{course_id}',[CourseController::class,'saveCourse'])->na
 Route::get('/archiveCourse/{course_id}',[CourseController::class,'archiveCourse'])->name('archiveCourse');
 Route::get('/showArchivedCourse',[CourseController::class,'showArchivedCourse'])->name('showArchivedCourse');
 Route::get('/restoreCourse/{course_id}', [CourseController::class, 'restoreCourse'])->name('restoreCourse');
-
-Route::get('/audits', [AuditController::class,'index']);
-
 //searchCourse
 Route::get('/searchCourse',[CourseController::class,'searchCourse'])->name('searchCourse');
 
-//searchAudit
+//Audit
+Route::get('/audits', [AuditController::class,'index']);
 Route::get('/searchAudit',[AuditController::class,'searchAudit'])->name('searchAudit');
+
+//profile
+Route::get('/profile', [UserController::class,'auditLogHistory']);
+Route::get("/profile/editProfile", [UserController::class, 'passDataProfile'])->name("passDataProfile");
+Route::post('/profile/editProfile', [UserController::class, 'saveProfile'])->name("saveProfile");

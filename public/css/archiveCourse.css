@@ -2,6 +2,10 @@
     padding:50px;
 }
 
+body{
+    background: #eceff1;
+}
+
 .image{
     width:150px;
     padding:20px;
