@@ -45,10 +45,16 @@ class CourseController extends Controller{
             $course->{'8CLO2'} = $req->{'8CLO2'};
             $course->{'8CLO3'} = $req->{'8CLO3'};
             $course->{'8CLO4'} = $req->{'8CLO4'};
+            $course->{'8CLO5'} = $req->{'8CLO5'};
+            $course->{'8CLO6'} = $req->{'8CLO6'};
+            $course->{'8CLO7'} = $req->{'8CLO7'};
             $course->{'8DTL1'} = $req->{'8DTL1'};
             $course->{'8DTL2'} = $req->{'8DTL2'};
             $course->{'8DTL3'} = $req->{'8DTL3'};
             $course->{'8DTL4'} = $req->{'8DTL4'};
+            $course->{'8DTL5'} = $req->{'8DTL5'};
+            $course->{'8DTL6'} = $req->{'8DTL6'};
+            $course->{'8DTL7'} = $req->{'8DTL7'};
             //9. CO1
             //use a ternary operator to convert the checkbox value to an integer (1 for checked, 0 for unchecked) before saving it to the database.
             $course->{'9CO1_PO1'} = $req->has('9CO1_PO1');
@@ -98,6 +104,42 @@ class CourseController extends Controller{
             $course->{'9CO4_PO9'} = $req->has('9CO4_PO9');
             $course->{'CO4_L'} = $req->{'CO4_L'};
             $course->{'CO4_A'} = $req->{'CO4_A'};
+            //9. CO5
+            $course->{'9CO5_PO1'} = $req->has('9CO5_PO1');
+            $course->{'9CO5_PO2'} = $req->has('9CO5_PO2');
+            $course->{'9CO5_PO3'} = $req->has('9CO5_PO3');
+            $course->{'9CO5_PO4'} = $req->has('9CO5_PO4');
+            $course->{'9CO5_PO5'} = $req->has('9CO5_PO5');
+            $course->{'9CO5_PO6'} = $req->has('9CO5_PO6');
+            $course->{'9CO5_PO7'} = $req->has('9CO5_PO7');
+            $course->{'9CO5_PO8'} = $req->has('9CO5_PO8');
+            $course->{'9CO5_PO9'} = $req->has('9CO5_PO9');
+            $course->{'CO5_L'} = $req->{'CO5_L'};
+            $course->{'CO5_A'} = $req->{'CO5_A'};
+            //9. CO6
+            $course->{'9CO6_PO1'} = $req->has('9CO6_PO1');
+            $course->{'9CO6_PO2'} = $req->has('9CO6_PO2');
+            $course->{'9CO6_PO3'} = $req->has('9CO6_PO3');
+            $course->{'9CO6_PO4'} = $req->has('9CO6_PO4');
+            $course->{'9CO6_PO5'} = $req->has('9CO6_PO5');
+            $course->{'9CO6_PO6'} = $req->has('9CO6_PO6');
+            $course->{'9CO6_PO7'} = $req->has('9CO6_PO7');
+            $course->{'9CO6_PO8'} = $req->has('9CO6_PO8');
+            $course->{'9CO6_PO9'} = $req->has('9CO6_PO9');
+            $course->{'CO6_L'} = $req->{'CO6_L'};
+            $course->{'CO6_A'} = $req->{'CO6_A'};
+            //9. CO7
+            $course->{'9CO7_PO1'} = $req->has('9CO7_PO1');
+            $course->{'9CO7_PO2'} = $req->has('9CO7_PO2');
+            $course->{'9CO7_PO3'} = $req->has('9CO7_PO3');
+            $course->{'9CO7_PO4'} = $req->has('9CO7_PO4');
+            $course->{'9CO7_PO5'} = $req->has('9CO7_PO5');
+            $course->{'9CO7_PO6'} = $req->has('9CO7_PO6');
+            $course->{'9CO7_PO7'} = $req->has('9CO7_PO7');
+            $course->{'9CO7_PO8'} = $req->has('9CO7_PO8');
+            $course->{'9CO7_PO9'} = $req->has('9CO7_PO9');
+            $course->{'CO7_L'} = $req->{'CO7_L'};
+            $course->{'CO7_A'} = $req->{'CO7_A'};
             //9. total
             $course->{'total_PO1'} = $req->{'total_PO1'};
             $course->{'total_PO2'} = $req->{'total_PO2'};
@@ -275,6 +317,42 @@ class CourseController extends Controller{
         $course->{'9CO4_PO9'} = $req->has('9CO4_PO9');
         $course->{'CO4_L'} = $req->{'CO4_L'};
         $course->{'CO4_A'} = $req->{'CO4_A'};
+        //9. CO5
+        $course->{'9CO5_PO1'} = $req->has('9CO5_PO1');
+        $course->{'9CO5_PO2'} = $req->has('9CO5_PO2');
+        $course->{'9CO5_PO3'} = $req->has('9CO5_PO3');
+        $course->{'9CO5_PO4'} = $req->has('9CO5_PO4');
+        $course->{'9CO5_PO5'} = $req->has('9CO5_PO5');
+        $course->{'9CO5_PO6'} = $req->has('9CO5_PO6');
+        $course->{'9CO5_PO7'} = $req->has('9CO5_PO7');
+        $course->{'9CO5_PO8'} = $req->has('9CO5_PO8');
+        $course->{'9CO5_PO9'} = $req->has('9CO5_PO9');
+        $course->{'CO5_L'} = $req->{'CO5_L'};
+        $course->{'CO5_A'} = $req->{'CO5_A'};
+        //9. CO6
+        $course->{'9CO6_PO1'} = $req->has('9CO6_PO1');
+        $course->{'9CO6_PO2'} = $req->has('9CO6_PO2');
+        $course->{'9CO6_PO3'} = $req->has('9CO6_PO3');
+        $course->{'9CO6_PO4'} = $req->has('9CO6_PO4');
+        $course->{'9CO6_PO5'} = $req->has('9CO6_PO5');
+        $course->{'9CO6_PO6'} = $req->has('9CO6_PO6');
+        $course->{'9CO6_PO7'} = $req->has('9CO6_PO7');
+        $course->{'9CO6_PO8'} = $req->has('9CO6_PO8');
+        $course->{'9CO6_PO9'} = $req->has('9CO6_PO9');
+        $course->{'CO6_L'} = $req->{'CO6_L'};
+        $course->{'CO6_A'} = $req->{'CO6_A'};
+        //9. CO7
+        $course->{'9CO7_PO1'} = $req->has('9CO7_PO1');
+        $course->{'9CO7_PO2'} = $req->has('9CO7_PO2');
+        $course->{'9CO7_PO3'} = $req->has('9CO7_PO3');
+        $course->{'9CO7_PO4'} = $req->has('9CO7_PO4');
+        $course->{'9CO7_PO5'} = $req->has('9CO7_PO5');
+        $course->{'9CO7_PO6'} = $req->has('9CO7_PO6');
+        $course->{'9CO7_PO7'} = $req->has('9CO7_PO7');
+        $course->{'9CO7_PO8'} = $req->has('9CO7_PO8');
+        $course->{'9CO7_PO9'} = $req->has('9CO7_PO9');
+        $course->{'CO7_L'} = $req->{'CO7_L'};
+        $course->{'CO7_A'} = $req->{'CO7_A'};
         //9. total
         $course->{'total_PO1'} = $req->{'total_PO1'};
         $course->{'total_PO2'} = $req->{'total_PO2'};

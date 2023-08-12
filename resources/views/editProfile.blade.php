@@ -14,11 +14,10 @@
                 <h1>Profile > {{ Auth::user()->name }}</h1>
                 <a href="/profile">Back</a>
             </div>
-            <form method="POST" action="{{ route('saveProfile') }}"
-                onsubmit="return confirm('Are you sure you want to save changes?');">
+            <form method="POST" action="{{ route('saveProfile') }}">
                 @csrf
                 <div class="profile row mt-2">
-                    <h1>Personal Information</h1>
+                    <h1>Edit Profile</h1>
                     <hr>
                     <div class="col-md-8">
                         <div class="card mb-3">
@@ -28,7 +27,7 @@
                                         <h4 class="mb-0">Name</h4>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input value="{{ Auth::user()->name }}"></input>
+                                        <input name="name" value="{{ Auth::user()->name }}"></input>
                                     </div>
                                 </div>
                                 <hr>
@@ -37,7 +36,7 @@
                                         <h4 class="mb-0">Email</h4>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input value="{{ Auth::user()->email }}"></input>
+                                        <input name="email" value="{{ Auth::user()->email }}"></input>
                                     </div>
                                 </div>
                                 <hr>
@@ -47,9 +46,9 @@
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input type="password" name="password" required autocomplete="current-password"
-                                            class="detail-field-input" placeholder="New Password"><hr>
+                                            class="detail-field-input" placeholder="New Password"><hr></input>
                                         <input type="password" name="password_confirmation" required autocomplete="current-password"
-                                            class="detail-field-input @error('password') is-invalid @enderror" placeholder="Confirm Password">
+                                            class="detail-field-input @error('password') is-invalid @enderror" placeholder="Confirm Password"></input>
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

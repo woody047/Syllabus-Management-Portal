@@ -179,6 +179,48 @@
                                         <td><input type="text" name="CO4_A" style="width:80px" value="{{$course->CO4_A}}"></input></td>
                                     </tr>
                                     <tr>
+                                        <td><label>CO5</label></td>           
+                                        <td><input type="checkbox" name="9CO5_PO1" {{ $course->{'9CO5_PO1'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO2" {{ $course->{'9CO5_PO2'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO3" {{ $course->{'9CO5_PO3'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO4" {{ $course->{'9CO5_PO4'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO5" {{ $course->{'9CO5_PO5'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO6" {{ $course->{'9CO5_PO6'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO7" {{ $course->{'9CO5_PO7'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO8" {{ $course->{'9CO5_PO8'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO5_PO9" {{ $course->{'9CO5_PO9'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="text" name="CO5_L" style="width:100px" value="{{$course->CO5_L}}"></input></td>
+                                        <td><input type="text" name="CO5_A" style="width:80px" value="{{$course->CO5_A}}"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CO6</label></td>           
+                                        <td><input type="checkbox" name="9CO6_PO1" {{ $course->{'9CO6_PO1'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO2" {{ $course->{'9CO6_PO2'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO3" {{ $course->{'9CO6_PO3'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO4" {{ $course->{'9CO6_PO4'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO5" {{ $course->{'9CO6_PO5'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO6" {{ $course->{'9CO6_PO6'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO7" {{ $course->{'9CO6_PO7'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO8" {{ $course->{'9CO6_PO8'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO6_PO9" {{ $course->{'9CO6_PO9'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="text" name="CO6_L" style="width:100px" value="{{$course->CO6_L}}"></input></td>
+                                        <td><input type="text" name="CO6_A" style="width:80px" value="{{$course->CO6_A}}"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CO7</label></td>           
+                                        <td><input type="checkbox" name="9CO7_PO1" {{ $course->{'9CO7_PO1'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO2" {{ $course->{'9CO7_PO2'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO3" {{ $course->{'9CO7_PO3'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO4" {{ $course->{'9CO7_PO4'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO5" {{ $course->{'9CO7_PO5'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO6" {{ $course->{'9CO7_PO6'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO7" {{ $course->{'9CO7_PO7'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO8" {{ $course->{'9CO7_PO8'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="checkbox" name="9CO7_PO9" {{ $course->{'9CO7_PO9'} ? 'checked' : '' }}></input></td>
+                                        <td><input type="text" name="CO7_L" style="width:100px" value="{{$course->CO7_L}}"></input></td>
+                                        <td><input type="text" name="CO7_A" style="width:80px" value="{{$course->CO7_A}}"></input></td>
+                                    </tr>
+                                    <tr>
                                         <td><label>Total</label></td>           
                                         <td><input type="text" name="total_PO1" style="width:20px" value="{{$course->total_PO1}}"></input></td>
                                         <td><input type="text" name="total_PO2" style="width:20px" value="{{$course->total_PO2}}"></input></td>

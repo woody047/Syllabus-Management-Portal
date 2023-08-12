@@ -83,6 +83,9 @@
                                             <label>CO2- &nbsp;</label><input type="text" name="8CLO2" class="tab-space" style="width:800px;"></input><br>
                                             <label>CO3- &nbsp;</label><input type="text" name="8CLO3" class="tab-space" style="width:800px;"></input><br>
                                             <label>CO4- &nbsp;</label><input type="text" name="8CLO4" class="tab-space" style="width:800px;"></input><br>
+                                            <label>CO5- &nbsp;</label><input type="text" name="8CLO5" class="tab-space" style="width:800px;"></input><br>
+                                            <label>CO6- &nbsp;</label><input type="text" name="8CLO6" class="tab-space" style="width:800px;"></input><br>
+                                            <label>CO7- &nbsp;</label><input type="text" name="8CLO7" class="tab-space" style="width:800px;"></input><br>
 
                                         </td>
                                         <td style="width:100px;">
@@ -90,6 +93,9 @@
                                             <input type="text" name="8DTL2" class="tab-space"></input><br>
                                             <input type="text" name="8DTL3" class="tab-space"></input><br>
                                             <input type="text" name="8DTL4" class="tab-space"></input><br>
+                                            <input type="text" name="8DTL5" class="tab-space"></input><br>
+                                            <input type="text" name="8DTL6" class="tab-space"></input><br>
+                                            <input type="text" name="8DTL7" class="tab-space"></input><br>
 
                                         </td>
                                     </tr>
@@ -179,6 +185,48 @@
                                             <td><input type="checkbox" name="9CO4_PO9" ></input></td>
                                             <td><input type="text" name="CO4_L" style="width:100px"></input></td>
                                             <td><input type="text" name="CO4_A" style="width:80px"></input></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>CO5</label></td>           
+                                            <td><input type="checkbox" name="9CO5_PO1" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO2" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO3" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO4" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO5" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO6" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO7" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO8" ></input></td>
+                                            <td><input type="checkbox" name="9CO5_PO9" ></input></td>
+                                            <td><input type="text" name="CO5_L" style="width:100px"></input></td>
+                                            <td><input type="text" name="CO5_A" style="width:80px"></input></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>CO6</label></td>           
+                                            <td><input type="checkbox" name="9CO6_PO1" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO2" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO3" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO4" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO5" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO6" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO7" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO8" ></input></td>
+                                            <td><input type="checkbox" name="9CO6_PO9" ></input></td>
+                                            <td><input type="text" name="CO6_L" style="width:100px"></input></td>
+                                            <td><input type="text" name="CO6_A" style="width:80px"></input></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>CO7</label></td>           
+                                            <td><input type="checkbox" name="9CO7_PO1" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO2" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO3" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO4" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO5" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO6" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO7" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO8" ></input></td>
+                                            <td><input type="checkbox" name="9CO7_PO9" ></input></td>
+                                            <td><input type="text" name="CO7_L" style="width:100px"></input></td>
+                                            <td><input type="text" name="CO7_A" style="width:80px"></input></td>
                                         </tr>
                                         <tr>
                                             <td><label>Total</label></td>           

@@ -35,10 +35,16 @@ class CreateCoursesTable extends Migration
             $table->string('8CLO2',255)->nullable();
             $table->string('8CLO3',255)->nullable();
             $table->string('8CLO4',255)->nullable();
+            $table->string('8CLO5',255)->nullable();
+            $table->string('8CLO6',255)->nullable();
+            $table->string('8CLO7',255)->nullable();
             $table->string('8DTL1',255)->nullable();
             $table->string('8DTL2',255)->nullable();
             $table->string('8DTL3',255)->nullable();
             $table->string('8DTL4',255)->nullable();
+            $table->string('8DTL5',255)->nullable();
+            $table->string('8DTL6',255)->nullable();
+            $table->string('8DTL7',255)->nullable();
             //9. CO1
             $table->boolean('9CO1_PO1')->nullable();
             $table->boolean('9CO1_PO2')->nullable();
@@ -87,6 +93,42 @@ class CreateCoursesTable extends Migration
             $table->boolean('9CO4_PO9')->nullable();
             $table->string('CO4_L',50)->nullable();
             $table->string('CO4_A',50)->nullable();
+            //9. CO5
+            $table->boolean('9CO5_PO1')->nullable();
+            $table->boolean('9CO5_PO2')->nullable();
+            $table->boolean('9CO5_PO3')->nullable();
+            $table->boolean('9CO5_PO4')->nullable();
+            $table->boolean('9CO5_PO5')->nullable();
+            $table->boolean('9CO5_PO6')->nullable();
+            $table->boolean('9CO5_PO7')->nullable();
+            $table->boolean('9CO5_PO8')->nullable();
+            $table->boolean('9CO5_PO9')->nullable();
+            $table->string('CO5_L',50)->nullable();
+            $table->string('CO5_A',50)->nullable();
+            //9. CO6
+            $table->boolean('9CO6_PO1')->nullable();
+            $table->boolean('9CO6_PO2')->nullable();
+            $table->boolean('9CO6_PO3')->nullable();
+            $table->boolean('9CO6_PO4')->nullable();
+            $table->boolean('9CO6_PO5')->nullable();
+            $table->boolean('9CO6_PO6')->nullable();
+            $table->boolean('9CO6_PO7')->nullable();
+            $table->boolean('9CO6_PO8')->nullable();
+            $table->boolean('9CO6_PO9')->nullable();
+            $table->string('CO6_L',50)->nullable();
+            $table->string('CO6_A',50)->nullable();
+            //9. CO7
+            $table->boolean('9CO7_PO1')->nullable();
+            $table->boolean('9CO7_PO2')->nullable();
+            $table->boolean('9CO7_PO3')->nullable();
+            $table->boolean('9CO7_PO4')->nullable();
+            $table->boolean('9CO7_PO5')->nullable();
+            $table->boolean('9CO7_PO6')->nullable();
+            $table->boolean('9CO7_PO7')->nullable();
+            $table->boolean('9CO7_PO8')->nullable();
+            $table->boolean('9CO7_PO9')->nullable();
+            $table->string('CO7_L',50)->nullable();
+            $table->string('CO7_A',50)->nullable();
             //9. total
             $table->string('total_PO1',50)->nullable();
             $table->string('total_PO2',50)->nullable();
@@ -140,8 +182,8 @@ class CreateCoursesTable extends Migration
             //12
             $table->string('special_requirement',255);
             //13
-            $table->string('main_references',255);
-            $table->string('additional_references',255);           
+            $table->text('main_references');
+            $table->text('additional_references');           
             //14
             $table->string('other_addition_info',255);                       
             //15

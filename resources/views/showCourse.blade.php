@@ -82,6 +82,10 @@
                                         <label>CO2- &nbsp;</label>{{ $course->{'8CLO2'} }}<br>
                                         <label>CO3- &nbsp;</label>{{ $course->{'8CLO3'} }}<br>
                                         <label>CO4- &nbsp;</label>{{ $course->{'8CLO4'} }}<br>
+                                        <label>CO5- &nbsp;</label>{{ $course->{'8CLO5'} }}<br>
+                                        <label>CO6- &nbsp;</label>{{ $course->{'8CLO6'} }}<br>
+                                        <label>CO7- &nbsp;</label>{{ $course->{'8CLO7'} }}<br>
+
 
                                     </td>
                                     <td style="width:100px;">
@@ -89,6 +93,10 @@
                                         {{ $course->{'8DTL2'} }}<br>
                                         {{ $course->{'8DTL3'} }}<br>
                                         {{ $course->{'8DTL4'} }}<br>
+                                        {{ $course->{'8DTL5'} }}<br>
+                                        {{ $course->{'8DTL6'} }}<br>
+                                        {{ $course->{'8DTL7'} }}<br>
+
                                     </td>
                                 </tr>
                                 <p class="courseInfo">Domain and Taxonomy Level – Cognitive (C), Level 1 - 6; Affective (A), Level 1 - 5; Psychomotor (P), Level 1 - 5</p>
@@ -179,6 +187,48 @@
                                         <td>{!! $course->{'9CO4_PO9'} ? '&#10004;' : ' ' !!}</td>
                                         <td>{{ $course->CO4_L }}</td>
                                         <td>{{ $course->CO4_A }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CO5</label></td>           
+                                        <td>{!! $course->{'9CO5_PO1'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO2'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO3'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO4'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO5'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO6'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO7'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO8'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO5_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{{ $course->CO5_L }}</td>
+                                        <td>{{ $course->CO5_A }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CO6</label></td>           
+                                        <td>{!! $course->{'9CO6_PO1'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO2'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO3'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO4'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO5'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO6'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO7'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO8'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO6_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{{ $course->CO6_L }}</td>
+                                        <td>{{ $course->CO6_A }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>CO7</label></td>           
+                                        <td>{!! $course->{'9CO7_PO1'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO2'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO3'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO4'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO5'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO6'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO7'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO8'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{!! $course->{'9CO7_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                        <td>{{ $course->CO7_L }}</td>
+                                        <td>{{ $course->CO7_A }}</td>
                                     </tr>
                                     <tr>
                                         <td><label>Total</label></td>           

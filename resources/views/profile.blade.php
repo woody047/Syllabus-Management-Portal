@@ -39,10 +39,10 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h4 class="mb-0">Password</h4>
+                                    <h4 class="mb-0">ID</h4>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <span>**********</span>
+                                    <h4>{{ Auth::user()->id }}</h4>
                                 </div>
                             </div>
                             <hr>
@@ -54,12 +54,7 @@
                                     <h4>{{ Auth::user()->role }}</h4>
                                 </div>
                             </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <a class="btn btn-primary" href="{{ route('passDataProfile') }}">Edit Profile</a>
-                                </div>
-                            </div>
+                            <!-- I dont include the edit function here cuz fyp scope didnt mentioned I want to do so -->
                         </div>
                     </div>
                 </div>

@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use OwenIt\Auditing\Models\Audit;
 use Auth;
-
 
 class UserController extends Controller
 {
@@ -23,10 +21,23 @@ class UserController extends Controller
         return view('profile', ['profiles' => $profiles]);
     }
 
-    public function passDataProfile()
-    {
-        $user = Auth::user();
-        return view('editProfile', compact('user'));
-    }
+    // public function passDataProfile()
+    // {
+    //     $user = Auth::user();
+    //     return view('editProfile', compact('user'));
+    // }
     
+    // public function saveProfile(Request $req){
+    //     $this->validate($req, [
+    //         'name' => 'required',
+    //         'email' => 'required|unique:users,email|email',
+    //         'password' => 'required|confirmed|min:6',
+    //     ]);
+    //     $user = Auth::user();
+    //     $user->name = $req->name;
+    //     $user->email = $req->email;
+    //     $user->password = bcrypt($req->password);
+    //     $user->save();
+    //     return redirect('profile');
+    // }
 }
