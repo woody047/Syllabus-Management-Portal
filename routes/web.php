@@ -44,5 +44,5 @@ Route::get('/searchAudit',[AuditController::class,'searchAudit'])->name('searchA
 
 //profile
 Route::get('/profile', [UserController::class,'auditLogHistory']);
-//Route::get("/profile/editProfile", [UserController::class, 'passDataProfile'])->name("editProfile");
-//Route::post('/profile/editProfile', [UserController::class, 'saveProfile'])->name("saveProfile");
+Route::get("/profile/editProfile", [UserController::class, 'passDataProfile'])->name("editProfile");
+Route::post('/profile/editProfile', [UserController::class, 'saveProfile'])->name("saveProfile");

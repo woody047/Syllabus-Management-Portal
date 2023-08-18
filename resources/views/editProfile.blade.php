@@ -27,7 +27,7 @@
                                         <h4 class="mb-0">Name</h4>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input name="name" value="{{ Auth::user()->name }}"></input>
+                                        <input name="name" value="{{ Auth::user()->name }}" required></input>
                                     </div>
                                 </div>
                                 <hr>
@@ -36,7 +36,7 @@
                                         <h4 class="mb-0">Email</h4>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input name="email" value="{{ Auth::user()->email }}"></input>
+                                        <input name="email" value="{{ Auth::user()->email }}" required></input>
                                     </div>
                                 </div>
                                 <hr>

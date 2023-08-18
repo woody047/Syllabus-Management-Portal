@@ -54,7 +54,11 @@
                                     <h4>{{ Auth::user()->role }}</h4>
                                 </div>
                             </div>
+                            <hr>
                             <!-- I dont include the edit function here cuz fyp scope didnt mentioned I want to do so -->
+                            <a href="/profile/editProfile">
+                                <button type="button" class="btn btn-primary" style="float:right">Edit</button>
+                            </a>
                         </div>
                     </div>
                 </div>
