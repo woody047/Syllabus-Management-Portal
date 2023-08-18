@@ -5071,22 +5071,42 @@ module.exports = {
 /***/ (() => {
 
 $(document).ready(function () {
-  var rowCount = 0;
+  var rowCount = $('#table-body tr').length; // Get the initial number of rows
+
+  // Function to update button visibility based on row count
+  function updateButtonVisibility() {
+    if (rowCount <= 1) {
+      $('#remove-row').hide();
+    } else {
+      $('#remove-row').show();
+    }
+  }
+
+  // Initial button visibility setup
+  updateButtonVisibility();
+
   // Handle the "Add" button click event
   $('#add-row').click(function () {
     rowCount++;
+    updateButtonVisibility();
+
     // Create a new row with input fields
-    var row = "\n        <tr>\n            <td><textarea type=\"text\" name=\"courseOutline[]\" rows=\"5\" cols=\"50\" style=\"width:500px; height:200px;\" required></textarea></td>           \n            <td><input type=\"text\" name=\"CO[]\" style=\"width:100px\" required></input></td>\n            <td><input type=\"text\" name=\"L[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"T[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"P[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"O[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"GuidedLearning[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"IndependentLearning[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"TotalSLT[]\" style=\"width:20px\" required></input></td>\n        </tr>\n";
+    var row = "\n        <tr>\n            <td><textarea type=\"text\" name=\"courseOutline[]\" rows=\"5\" cols=\"50\" style=\"width:500px; height:200px;\" required></textarea></td>           \n            <td><input type=\"text\" name=\"CO[]\" style=\"width:100px\" required></input></td>\n            <td><input type=\"text\" name=\"L[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"T[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"P[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"O[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"GuidedLearning[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"IndependentLearning[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"TotalSLT[]\" style=\"width:20px\" required></input></td>\n        </tr>\n        ";
 
     // Append the new row to the table body
     $('#table-body').append(row);
   });
-});
-$(document).ready(function () {
+
   // Handle the "Remove" button click event
   $('#remove-row').click(function () {
-    // Remove the last row from the table body
-    $('#table-body tr:last-child').remove();
+    if (rowCount > 1) {
+      // Ensure there's at least one row
+      rowCount--;
+      updateButtonVisibility();
+
+      // Remove the last row from the table body
+      $('#table-body tr:last-child').remove();
+    }
   });
 });
 
@@ -5099,22 +5119,42 @@ $(document).ready(function () {
 /***/ (() => {
 
 $(document).ready(function () {
-  var rowCount = 0;
+  var rowCount = $('#table-body-info-on-prac tr').length; // Get the initial number of rows
+
+  // Function to update button visibility based on row count
+  function updateButtonVisibility() {
+    if (rowCount <= 1) {
+      $('#remove-row-for-info-on-prac').hide();
+    } else {
+      $('#remove-row-for-info-on-prac').show();
+    }
+  }
+
+  // Initial button visibility setup
+  updateButtonVisibility();
+
   // Handle the "Add" button click event
   $('#add-row-for-info-on-prac').click(function () {
     rowCount++;
+    updateButtonVisibility();
+
     // Create a new row with input fields
-    var row = "\n        <tr>\n            <td><input type=\"text\" name=\"lab[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"co[]\" style=\"width:100px\" required></input></td>\n            <td><textarea type=\"text\" name=\"activity[]\" rows=\"5\" cols=\"50\" style=\"width:900px; height:200px;float:left;\" required></textarea></td>           \n            <td><input type=\"text\" name=\"contact_hours[]\" style=\"width:20px\" required></input></td>\n        </tr>\n";
+    var row = "\n        <tr>\n            <td><input type=\"text\" name=\"lab[]\" style=\"width:20px\" required></input></td>\n            <td><input type=\"text\" name=\"co[]\" style=\"width:100px\" required></input></td>\n            <td><textarea type=\"text\" name=\"activity[]\" rows=\"5\" cols=\"50\" style=\"width:900px; height:200px;float:left;\" required></textarea></td>           \n            <td><input type=\"text\" name=\"contact_hours[]\" style=\"width:20px\" required></input></td>\n        </tr>\n        ";
 
     // Append the new row to the table body
     $('#table-body-info-on-prac').append(row);
   });
-});
-$(document).ready(function () {
+
   // Handle the "Remove" button click event
   $('#remove-row-for-info-on-prac').click(function () {
-    // Remove the last row from the table body
-    $('#table-body-info-on-prac tr:last-child').remove();
+    if (rowCount > 1) {
+      // Ensure there's at least one row
+      rowCount--;
+      updateButtonVisibility();
+
+      // Remove the last row from the table body
+      $('#table-body-info-on-prac tr:last-child').remove();
+    }
   });
 });
 

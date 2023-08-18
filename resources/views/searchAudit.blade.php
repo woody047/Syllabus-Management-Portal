@@ -18,7 +18,7 @@
                     <button id="search-button" type="submit"> Search</button>
                 </div>
             </form>
-            <a href="/home">Back</a>
+            <a href="/audits">Back</a>
         </div>
         @if(count($audits)>0)
         <div class="table-container">
