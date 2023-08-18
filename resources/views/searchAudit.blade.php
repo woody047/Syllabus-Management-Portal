@@ -20,7 +20,7 @@
             </form>
             <a href="/home">Back</a>
         </div>
-        @if(count($audit)>0)
+        @if(count($audits)>0)
         <div class="table-container">
         <table>
             <thead>
@@ -35,48 +35,48 @@
             </tr>
             </thead>
             <tbody id="audits">
-                @foreach($audit as $audits)
+                @foreach($audits as $audit)
                 <tr>
                 <td>
                 <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
                 , then proceed to display the course code and course name -->
-                @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
-                        {{ $audits->auditable->course_code }}
-                    @elseif ($audits->auditable_type === 'App\Models\CourseRow' && $audits->auditable)
-                        @if ($audits->auditable->course)
-                            {{ $audits->auditable->course->course_code }}<br>(Distribution of Student Learning Time)
+                @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                        {{ $audit->auditable->course_code }}
+                    @elseif ($audit->auditable_type === 'App\Models\CourseRow' && $audit->auditable)
+                        @if ($audit->auditable->course)
+                            {{ $audit->auditable->course->course_code }}<br>(Distribution of Student Learning Time)
                         @endif                                       
-                    @elseif ($audits->auditable_type === 'App\Models\InfoOnPracRow' && $audits->auditable)
-                        @if ($audits->auditable->course)
-                            {{ $audits->auditable->course->course_code }}<br>(Info On Practical)
+                    @elseif ($audit->auditable_type === 'App\Models\InfoOnPracRow' && $audit->auditable)
+                        @if ($audit->auditable->course)
+                            {{ $audit->auditable->course->course_code }}<br>(Info On Practical)
                         @endif
                     @endif                                    
                 </td>
                 <td>
                 <!-- If the auditable type is 'App\Models\Course' and there is an actual auditable model instance present
                 , then proceed to display the course code and course name -->
-                @if ($audits->auditable_type === 'App\Models\Course' && $audits->auditable)
-                    {{ $audits->auditable->course_name }}
-                @elseif ($audits->auditable_type === 'App\Models\CourseRow' && $audits->auditable)
-                    @if ($audits->auditable->course)
-                        {{ $audits->auditable->course->course_name }}<br>(Distribution of Student Learning Time)
+                @if ($audit->auditable_type === 'App\Models\Course' && $audit->auditable)
+                    {{ $audit->auditable->course_name }}
+                @elseif ($audit->auditable_type === 'App\Models\CourseRow' && $audit->auditable)
+                    @if ($audit->auditable->course)
+                        {{ $audit->auditable->course->course_name }}<br>(Distribution of Student Learning Time)
                     @endif
-                @elseif ($audits->auditable_type === 'App\Models\InfoOnPracRow' && $audits->auditable)
-                    @if ($audits->auditable->course)
-                        {{ $audits->auditable->course->course_name }}<br>(Info On Practical)
+                @elseif ($audit->auditable_type === 'App\Models\InfoOnPracRow' && $audit->auditable)
+                    @if ($audit->auditable->course)
+                        {{ $audit->auditable->course->course_name }}<br>(Info On Practical)
                     @endif
                 @endif
                 </td>
-                <td>{{ $audits->user->name }}</td>
-                <td>{{ $audits->event }}</td>
-                <td>{{ $audits->created_at }}</td>
+                <td>{{ $audit->user->name }}</td>
+                <td>{{ $audit->event }}</td>
+                <td>{{ $audit->created_at }}</td>
                 <td>
-                    <button class="btn btn-primary expand-collapse-btn" data-target="#collapseOldValues{{ $audits->id }}" aria-expanded="false">
+                    <button class="btn btn-primary expand-collapse-btn" data-target="#collapseOldValues{{ $audit->id }}" aria-expanded="false">
                         Expand/Collapse
                     </button>
-                    <div class="collapse" id="collapseOldValues{{ $audits->id }}">
+                    <div class="collapse" id="collapseOldValues{{ $audit->id }}">
                         <table class="table">
-                            @foreach ($audits->old_values as $attribute => $value)
+                            @foreach ($audit->old_values as $attribute => $value)
                                 <tr>
                                     <td><b>{{ $attribute }}</b></td>
                                     <td>{{ $value }}</td>
@@ -86,12 +86,12 @@
                     </div>
                 </td>
                 <td>
-                    <button class="btn btn-info expand-collapse-btn" data-target="#collapseNewValues{{ $audits->id }}" aria-expanded="false">
+                    <button class="btn btn-info expand-collapse-btn" data-target="#collapseNewValues{{ $audit->id }}" aria-expanded="false">
                         Expand/Collapse
                     </button>
-                    <div class="collapse" id="collapseNewValues{{ $audits->id }}">
+                    <div class="collapse" id="collapseNewValues{{ $audit->id }}">
                         <table class="table">
-                            @foreach ($audits->new_values as $attribute => $value)
+                            @foreach ($audit->new_values as $attribute => $value)
                                 <tr>
                                     <td><b>{{ $attribute }}</b></td>
                                     <td>{{ $value }}</td>
@@ -109,9 +109,8 @@
             <p>No audit log found matching "{{$keyword}}"</p>
         @endif
         <span>
-            {{$audit->links()}}
+            {{$audits->links()}}
         </span>
-
     </body>
 </div>
 
