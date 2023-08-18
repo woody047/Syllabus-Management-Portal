@@ -24,7 +24,11 @@
                                     <h4 class="mb-0">Name</h4>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <h4>{{ Auth::user()->name }}</h4>
+                                    <h4>{{ Auth::user()->name }}
+                                        <a href="/profile/editName">
+                                            <button type="button" class="btn btn-primary" style="float:right">Edit Name</button>
+                                        </a>
+                                    </h4>
                                 </div>
                             </div>
                             <hr>
@@ -33,16 +37,24 @@
                                     <h4 class="mb-0">Email</h4>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <h4>{{ Auth::user()->email }}</h4>
+                                    <h4>{{ Auth::user()->email }}
+                                    <a href="/profile/editEmail">
+                                        <button type="button" class="btn btn-primary" style="float:right">Edit Email</button>
+                                    </a>
+                                    </h4>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h4 class="mb-0">ID</h4>
+                                    <h4 class="mb-0">Password</h4>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <h4>{{ Auth::user()->id }}</h4>
+                                    <h4>*********
+                                    <a href="/profile/editPassword">
+                                        <button type="button" class="btn btn-primary" style="float:right">Edit Password</button>
+                                    </a>
+                                    </h4>
                                 </div>
                             </div>
                             <hr>
@@ -54,11 +66,6 @@
                                     <h4>{{ Auth::user()->role }}</h4>
                                 </div>
                             </div>
-                            <hr>
-                            <!-- I dont include the edit function here cuz fyp scope didnt mentioned I want to do so -->
-                            <a href="/profile/editProfile">
-                                <button type="button" class="btn btn-primary" style="float:right">Edit</button>
-                            </a>
                         </div>
                     </div>
                 </div>

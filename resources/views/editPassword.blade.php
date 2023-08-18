@@ -11,35 +11,16 @@
 
         <body>
             <div class="create-container">
-                <h1>Profile > {{ Auth::user()->name }}</h1>
-                <a href="/profile">Back</a>
+                <h1>Profile > {{ Auth::user()->name }} > Edit Password</h1>
             </div>
-            <form method="POST" action="{{ route('saveProfile') }}">
+            <form method="POST" action="{{ route('savePassword') }}">
                 @csrf
                 <div class="profile row mt-2">
-                    <h1>Edit Profile</h1>
+                    <h1>Edit Password</h1>
                     <hr>
                     <div class="col-md-8">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h4 class="mb-0">Name</h4>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input name="name" value="{{ Auth::user()->name }}" required></input>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h4 class="mb-0">Email</h4>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input name="email" value="{{ Auth::user()->email }}" required></input>
-                                    </div>
-                                </div>
-                                <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h4 class="mb-0">Password</h4>

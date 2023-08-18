@@ -5064,10 +5064,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/addbutton.js":
-/*!***********************************!*\
-  !*** ./resources/js/addbutton.js ***!
-  \***********************************/
+/***/ "./resources/js/addremovebutton.js":
+/*!*****************************************!*\
+  !*** ./resources/js/addremovebutton.js ***!
+  \*****************************************/
 /***/ (() => {
 
 $(document).ready(function () {
@@ -5082,13 +5082,20 @@ $(document).ready(function () {
     $('#table-body').append(row);
   });
 });
+$(document).ready(function () {
+  // Handle the "Remove" button click event
+  $('#remove-row').click(function () {
+    // Remove the last row from the table body
+    $('#table-body tr:last-child').remove();
+  });
+});
 
 /***/ }),
 
-/***/ "./resources/js/addbutton_for_info_on_prac.js":
-/*!****************************************************!*\
-  !*** ./resources/js/addbutton_for_info_on_prac.js ***!
-  \****************************************************/
+/***/ "./resources/js/addremovebutton_for_info_on_prac.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/addremovebutton_for_info_on_prac.js ***!
+  \**********************************************************/
 /***/ (() => {
 
 $(document).ready(function () {
@@ -5101,6 +5108,13 @@ $(document).ready(function () {
 
     // Append the new row to the table body
     $('#table-body-info-on-prac').append(row);
+  });
+});
+$(document).ready(function () {
+  // Handle the "Remove" button click event
+  $('#remove-row-for-info-on-prac').click(function () {
+    // Remove the last row from the table body
+    $('#table-body-info-on-prac tr:last-child').remove();
   });
 });
 
@@ -5127,10 +5141,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 __webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
-__webpack_require__(/*! ./addbutton */ "./resources/js/addbutton.js");
-__webpack_require__(/*! ./removebutton */ "./resources/js/removebutton.js");
-__webpack_require__(/*! ./addbutton_for_info_on_prac */ "./resources/js/addbutton_for_info_on_prac.js");
-__webpack_require__(/*! ./removebutton_for_info_on_prac */ "./resources/js/removebutton_for_info_on_prac.js");
+__webpack_require__(/*! ./addremovebutton */ "./resources/js/addremovebutton.js");
+__webpack_require__(/*! ./addremovebutton_for_info_on_prac */ "./resources/js/addremovebutton_for_info_on_prac.js");
 __webpack_require__(/*! ./archivebutton */ "./resources/js/archivebutton.js");
 
 /***/ }),
@@ -5245,38 +5257,6 @@ function Example() {
 if (document.getElementById('example')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Example, {}), document.getElementById('example'));
 }
-
-/***/ }),
-
-/***/ "./resources/js/removebutton.js":
-/*!**************************************!*\
-  !*** ./resources/js/removebutton.js ***!
-  \**************************************/
-/***/ (() => {
-
-$(document).ready(function () {
-  // Handle the "Remove" button click event
-  $('#remove-row').click(function () {
-    // Remove the last row from the table body
-    $('#table-body tr:last-child').remove();
-  });
-});
-
-/***/ }),
-
-/***/ "./resources/js/removebutton_for_info_on_prac.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/removebutton_for_info_on_prac.js ***!
-  \*******************************************************/
-/***/ (() => {
-
-$(document).ready(function () {
-  // Handle the "Remove" button click event
-  $('#remove-row-for-info-on-prac').click(function () {
-    // Remove the last row from the table body
-    $('#table-body-info-on-prac tr:last-child').remove();
-  });
-});
 
 /***/ }),
 

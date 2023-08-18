@@ -14,9 +14,7 @@ require('./bootstrap');
 
 require('./components/Example');
 
-require('./addbutton');
-require('./removebutton');
-require('./addbutton_for_info_on_prac');
-require('./removebutton_for_info_on_prac');
+require('./addremovebutton');
+require('./addremovebutton_for_info_on_prac');
 require('./archivebutton');
 

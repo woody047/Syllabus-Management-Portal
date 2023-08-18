@@ -44,7 +44,7 @@
                     <tr>
                         <td>3.</td>
                         <td class="courseInfo">
-                            <label>Name(s) of academic staff:&nbsp;</label><input name="course_staff" value="{{$course->course_staff}}" required></input>
+                            <label>Name(s) of academic staff:&nbsp;</label><input name="course_staff" value="{{$course->course_staff}}"></input>
                         </td>
                     </tr>
                     <tr>
@@ -505,8 +505,7 @@
 </body>
 </div>
 
-<script src="{{ asset('js/addbutton.js') }}"></script>
-<script src="{{ asset('js/removebutton.js') }}"></script>
+<script src="{{ asset('js/addremovebutton.js') }}"></script>
 <script src="{{ asset('js/addbutton_for_info_on_prac.js') }}"></script>
 <script src="{{ asset('js/removebutton_for_info_on_prac.js') }}"></script>
 

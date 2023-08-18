@@ -44,5 +44,12 @@ Route::get('/searchAudit',[AuditController::class,'searchAudit'])->name('searchA
 
 //profile
 Route::get('/profile', [UserController::class,'auditLogHistory']);
-Route::get("/profile/editProfile", [UserController::class, 'passDataProfile'])->name("editProfile");
-Route::post('/profile/editProfile', [UserController::class, 'saveProfile'])->name("saveProfile");
+//edit name
+Route::get("/profile/editName", [UserController::class, 'passDataName'])->name("editName");
+Route::post('/profile/editName', [UserController::class, 'saveName'])->name("saveName");
+//edit email
+Route::get("/profile/editEmail", [UserController::class, 'passDataEmail'])->name("editEmail");
+Route::post('/profile/editEmail', [UserController::class, 'saveEmail'])->name("saveEmail");
+//edit password
+Route::get("/profile/editPassword", [UserController::class, 'passDataPassword'])->name("editPassword");
+Route::post('/profile/editPassword', [UserController::class, 'savePassword'])->name("savePassword");
