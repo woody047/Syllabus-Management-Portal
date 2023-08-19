@@ -13,6 +13,11 @@
         <h1>Archived Courses</h1>
         <a href="/home">Back</a>
     </div>
+    @if(session('success'))
+        <div id="flash-message" class="alert alert-success text-center mx-auto" style="font-size: 22px; font-weight: bold;">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <div class="table-container">
         <table>
@@ -49,6 +54,15 @@
             @endif
         </table>
     </div>
+    <script>
+        const duration = 3000; // 3 seconds
+
+        const flashMessage = document.getElementById('flash-message');
+
+        setTimeout(function() {
+            flashMessage.style.display = 'none';
+        }, duration);
+    </script>
 </body>
 </div>
 @endsection

@@ -20,6 +20,11 @@
         </form>
         <a href="/createCourse">{{ __('Create New Course') }}</a>
     </div>
+    @if(session('success'))
+        <div id="flash-message" class="alert alert-success text-center mx-auto" style="font-size: 22px; font-weight: bold;">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="table-container">
         <table>
         @if(count($course)>0)
@@ -76,6 +81,15 @@
         @endif
         </table>
     </div>
+    <script>
+        const duration = 5000; // 3 seconds
+
+        const flashMessage = document.getElementById('flash-message');
+
+        setTimeout(function() {
+            flashMessage.style.display = 'none';
+        }, duration);
+    </script>
 </body>
 </div>
 

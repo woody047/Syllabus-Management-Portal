@@ -13,6 +13,11 @@
                 <h1>Profile > {{ Auth::user()->name }}</h1>
                 <a href="/home">Back</a>
             </div>
+            @if(session('success'))
+                <div id="flash-message" class="alert alert-success text-center mx-auto" style="font-size: 22px; font-weight: bold;">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="profile row mt-2">
                 <h1>Personal Information</h1>
                 <hr>
@@ -160,6 +165,15 @@
                     </table>
                 </div>
             </div>
+        <script>
+            const duration = 5000; // 3 seconds
+
+            const flashMessage = document.getElementById('flash-message');
+
+            setTimeout(function() {
+                flashMessage.style.display = 'none';
+            }, duration);
+        </script>
         </body>
     </div>
 

@@ -239,8 +239,7 @@ class CourseController extends Controller{
             $infoOnPracRow->contact_hours = $req->contact_hours[$i];
             $infoOnPracRow->save();
         }
-
-        return redirect("home");
+        return redirect("home")->with('success', $req->course_name . ' (' . $req->course_code . ') created successfully');
     }
 
     //retrieve data from database and pass to the edit page    
@@ -469,14 +468,14 @@ class CourseController extends Controller{
         $infoOnPracRow->save();
         }
 
-        return redirect('home');
+        return redirect('home')->with('success', $req->course_name . ' (' . $req->course_code . ') updated successfully');
     }
 
     function archiveCourse($course_id){
         $course = Course::findOrFail($course_id);
         $course->delete();
         // pass course_id as a parameter when calling archiveCourse route
-        return redirect('home');
+        return redirect('home')->with('success', $course->course_name . ' (' . $course->course_code . ') archived successfully');
     }
 
     function showArchivedCourse(){
@@ -493,7 +492,7 @@ class CourseController extends Controller{
         }
 
         // redirect to the showArchivedCourse once the restore button clicked
-        return redirect()->route('showArchivedCourse');
+        return redirect()->route('showArchivedCourse')->with('success', $course->course_name . ' (' . $course->course_code . ') restored successfully');
     }
 
     function searchCourse(Request $req){
