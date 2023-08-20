@@ -17,8 +17,7 @@
         <div id="flash-message" class="alert alert-success text-center mx-auto" style="font-size: 22px; font-weight: bold;">
             {{ session('success') }}
         </div>
-    @endif
-
+    @endif   
     <div class="table-container">
         <table>
             @if(count($archivedCourse)>0)
@@ -56,7 +55,6 @@
     </div>
     <script>
         const duration = 3000; // 3 seconds
-
         const flashMessage = document.getElementById('flash-message');
 
         setTimeout(function() {

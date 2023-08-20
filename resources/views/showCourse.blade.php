@@ -12,8 +12,9 @@
         <div class="create-container">
             <h1>{{ $course->course_name }}</h1>
             <div class="create-btn">
-                <a href="{{ route('editCourse',['course_id'=>$course->course_id]) }}">Update</a>
-                <a href="/home">Back</a>
+                <a href="{{ route('downloadPDF', ['course_id' => $course->course_id]) }}" class="btn btn-primary">Export to PDF</a>
+                <a href="{{ route('editCourse',['course_id'=>$course->course_id]) }}" class="btn btn-success">Update</a>
+                <a href="/home" class="btn btn-danger">Back</a>
             </div>
         </div>
         @if($course)
@@ -96,11 +97,12 @@
                                         {{ $course->{'8DTL5'} }}<br>
                                         {{ $course->{'8DTL6'} }}<br>
                                         {{ $course->{'8DTL7'} }}<br>
-
                                     </td>
                                 </tr>
-                                <p class="courseInfo">Domain and Taxonomy Level – Cognitive (C), Level 1 - 6; Affective (A), Level 1 - 5; Psychomotor (P), Level 1 - 5</p>
-                            </table>
+                            </table><br>
+                            <p class="courseInfo">
+                                <label>Domain and Taxonomy Level – Cognitive (C), Level 1 - 6; Affective (A), Level 1 - 5; Psychomotor (P), Level 1 - 5</label>
+                            </p>
                         </td>
                     </tr>
                     <tr>

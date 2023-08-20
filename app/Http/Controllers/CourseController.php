@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\CourseRow;
 use App\Models\InfoOnPracRow;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class CourseController extends Controller{
     function showlist(){
@@ -503,5 +504,14 @@ class CourseController extends Controller{
                 ->paginate(10);
 
         return view('searchCourse',compact('course','keyword'));
+    }
+
+    public function downloadPDF(Request $req) {
+        $course = Course::findOrFail($req->course_id);
+        $fileName = $course->course_name . '_' . $course->course_code . '.pdf';
+        $pdf = PDF::loadView('showPDF', ['course' => $course]);
+        
+        $pdf->setPaper('a4', 'landscape');        
+        return $pdf->download($fileName);
     }
 }

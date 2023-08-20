@@ -53,3 +53,6 @@ Route::post('/profile/editEmail', [UserController::class, 'saveEmail'])->name("s
 //edit password
 Route::get("/profile/editPassword", [UserController::class, 'passDataPassword'])->name("editPassword");
 Route::post('/profile/editPassword', [UserController::class, 'savePassword'])->name("savePassword");
+
+//pdf export
+Route::get('downloadPDF/{course_id}', 'App\Http\Controllers\CourseController@downloadPDF')->name('downloadPDF');
