@@ -179,6 +179,8 @@ class CreateCoursesTable extends Migration
             $table->string('FA_NF2F',50);
             $table->string('FA_TotalSLT',50);
             $table->string('grand_total_SLT',50);
+            $table->boolean('11_tick')->nullable();
+
             //12
             $table->string('special_requirement',255);
             //13

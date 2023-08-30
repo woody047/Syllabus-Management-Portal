@@ -46,7 +46,7 @@ class UserController extends Controller
         $user = Auth::user();
         $user->name = $req->name;
         $user->save();
-        return redirect('profile')->with('success', 'Profile name >' . $user->name . ' edited successfully');
+        return redirect('profile')->with('success', 'Profile name ' . $user->name . ' edited successfully');
     }
 
     public function saveEmail(Request $req){
@@ -56,7 +56,7 @@ class UserController extends Controller
         $user = Auth::user();
         $user->email = $req->email;
         $user->save();
-        return redirect('profile')->with('success', 'Profile email >' . $user->email . ' edited successfully');
+        return redirect('profile')->with('success', 'Profile email ' . $user->email . ' edited successfully');
     }
 
     public function savePassword(Request $req){
@@ -66,6 +66,6 @@ class UserController extends Controller
         $user = Auth::user();
         $user->password = bcrypt($req->password);
         $user->save();
-        return redirect('profile')->with('success', 'Profile password >' . $user->password . ' edited successfully');
+        return redirect('profile')->with('success', 'Profile password edited successfully');
     }
 }

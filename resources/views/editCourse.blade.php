@@ -424,6 +424,9 @@
                                 </tr>            
                             </table>
                             <br>
+                            <h5 style="float:left;">**Please tick (√) if this course is Industrial Training / Clinical Placement / Practicum / WBL using
+                            Effective Learning Time(ELT) of 50%</h5>
+                            <input type="checkbox" name="11_tick" style="width: 20px;height: 20px;" {{ $course->{'11_tick'} ? 'checked' : '' }}></input>
                             <p class="courseInfo">* L = Lecture, T = Tutorial, P = Practical, O = Others, * F2F = Face-to-Face, NF2F = Non Face-to-Face</p>
                         </td>
                     </tr>

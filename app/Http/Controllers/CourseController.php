@@ -8,6 +8,7 @@ use App\Models\CourseRow;
 use App\Models\InfoOnPracRow;
 use Illuminate\Support\Facades\Auth;
 use PDF;
+use Mpdf\Mpdf;
 
 class CourseController extends Controller{
     function showlist(){
@@ -190,6 +191,7 @@ class CourseController extends Controller{
             $course->{'FA_NF2F'} = $req->{'FA_NF2F'};
             $course->{'FA_TotalSLT'} = $req->{'FA_TotalSLT'};
             $course->{'grand_total_SLT'} = $req->{'grand_total_SLT'};
+            $course->{'11_tick'} = $req->has('11_tick');
             //12
             $course->{'special_requirement'} = $req->{'special_requirement'};
             //13
@@ -402,6 +404,7 @@ class CourseController extends Controller{
         $course->{'FA_NF2F'} = $req->{'FA_NF2F'};
         $course->{'FA_TotalSLT'} = $req->{'FA_TotalSLT'};
         $course->{'grand_total_SLT'} = $req->{'grand_total_SLT'};
+        $course->{'11_tick'} = $req->has('11_tick');
         //12
         $course->{'special_requirement'} = $req->{'special_requirement'};
         //13
@@ -506,12 +509,18 @@ class CourseController extends Controller{
         return view('searchCourse',compact('course','keyword'));
     }
 
-    public function downloadPDF(Request $req) {
+    public function downloadPDF(Request $req)
+    {
         $course = Course::findOrFail($req->course_id);
         $fileName = $course->course_name . '_' . $course->course_code . '.pdf';
-        $pdf = PDF::loadView('showPDF', ['course' => $course]);
-        
-        $pdf->setPaper('a4', 'landscape');        
-        return $pdf->download($fileName);
+    
+        $data = ['course' => $course];
+        $html = view('showPDF', $data)->render();
+    
+        $pdf = new Mpdf();
+        $pdf->WriteHTML($html);
+        $pdf->Output($fileName, 'D'); // 'D' sends the PDF for download
+    
+        exit(); // Terminate script to prevent further output
     }
 }

@@ -56,31 +56,35 @@
             <tr>
                 <td>8.</td>
                 <td>
-                    <table>                  
-                        <th>Course Learning Outcomes (CO):</th>
-                        <th>Domain & Taxonomy Level</th>
-                        <tr>
-                            <td class="courseInfo">
-                                <label>CO1- &nbsp;</label>{{ $course->{'8CLO1'} }}<br>
-                                <label>CO2- &nbsp;</label>{{ $course->{'8CLO2'} }}<br>
-                                <label>CO3- &nbsp;</label>{{ $course->{'8CLO3'} }}<br>
-                                <label>CO4- &nbsp;</label>{{ $course->{'8CLO4'} }}<br>
-                                <label>CO5- &nbsp;</label>{{ $course->{'8CLO5'} }}<br>
-                                <label>CO6- &nbsp;</label>{{ $course->{'8CLO6'} }}<br>
-                                <label>CO7- &nbsp;</label>{{ $course->{'8CLO7'} }}<br>
-
-
-                            </td>
-                            <td style="width:100px;">
-                                {{ $course->{'8DTL1'} }}<br>
-                                {{ $course->{'8DTL2'} }}<br>
-                                {{ $course->{'8DTL3'} }}<br>
-                                {{ $course->{'8DTL4'} }}<br>
-                                {{ $course->{'8DTL5'} }}<br>
-                                {{ $course->{'8DTL6'} }}<br>
-                                {{ $course->{'8DTL7'} }}<br>
-                            </td>
-                        </tr>
+                    <table>  
+                        <thead>
+                            <tr>Course Learning Outcomes (CO):
+                                <th>Course Learning Outcomes (CO):</th>
+                                <th>Domain & Taxonomy Level</th>
+                            </tr>
+                        </thead>  
+                        <tbody>
+                            <tr>
+                                <td class="courseInfo">
+                                    <label>CO1- &nbsp;</label>{{ $course->{'8CLO1'} }}<br>
+                                    <label>CO2- &nbsp;</label>{{ $course->{'8CLO2'} }}<br>
+                                    <label>CO3- &nbsp;</label>{{ $course->{'8CLO3'} }}<br>
+                                    <label>CO4- &nbsp;</label>{{ $course->{'8CLO4'} }}<br>
+                                    <label>CO5- &nbsp;</label>{{ $course->{'8CLO5'} }}<br>
+                                    <label>CO6- &nbsp;</label>{{ $course->{'8CLO6'} }}<br>
+                                    <label>CO7- &nbsp;</label>{{ $course->{'8CLO7'} }}<br>
+                                </td>
+                                <td style="width:100px;">
+                                    {{ $course->{'8DTL1'} }}<br>
+                                    {{ $course->{'8DTL2'} }}<br>
+                                    {{ $course->{'8DTL3'} }}<br>
+                                    {{ $course->{'8DTL4'} }}<br>
+                                    {{ $course->{'8DTL5'} }}<br>
+                                    {{ $course->{'8DTL6'} }}<br>
+                                    {{ $course->{'8DTL7'} }}<br>
+                                </td>
+                            </tr>
+                        </tbody>              
                     </table><br>
                     <p class="courseInfo">
                         <label>Domain and Taxonomy Level – Cognitive (C), Level 1 - 6; Affective (A), Level 1 - 5; Psychomotor (P), Level 1 - 5</label>
@@ -118,99 +122,99 @@
                                 <td><label>CO1</label></td>
                                 <!-- &#10004 means tick symbol, &#10008 means cross symbol -->
                                 <!-- true or false statement -->
-                                <td>{!! $course->{'9CO1_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO5'} ? '&#10004;' : ' ' !!}</input></td>
-                                <td>{!! $course->{'9CO1_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO7'} ? '&#10004;' : ' ' !!}</input></td>
-                                <td>{!! $course->{'9CO1_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO1_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO1_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO1_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO1_L }}</td>
                                 <td>{{ $course->CO1_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO2</label></td>           
-                                <td>{!! $course->{'9CO2_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO2_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO2_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO2_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO2_L }}</td>
                                 <td>{{ $course->CO2_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO3</label></td>           
-                                <td>{!! $course->{'9CO3_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO3_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO3_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO3_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO3_L }}</td>
                                 <td>{{ $course->CO3_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO4</label></td>           
-                                <td>{!! $course->{'9CO4_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO4_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO4_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO4_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO4_L }}</td>
                                 <td>{{ $course->CO4_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO5</label></td>           
-                                <td>{!! $course->{'9CO5_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO5_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO5_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO5_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO5_L }}</td>
                                 <td>{{ $course->CO5_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO6</label></td>           
-                                <td>{!! $course->{'9CO6_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO6_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO6_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO6_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO6_L }}</td>
                                 <td>{{ $course->CO6_A }}</td>
                             </tr>
                             <tr>
                                 <td><label>CO7</label></td>           
-                                <td>{!! $course->{'9CO7_PO1'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO2'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO3'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO4'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO5'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO6'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO7'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO8'} ? '&#10004;' : ' ' !!}</td>
-                                <td>{!! $course->{'9CO7_PO9'} ? '&#10004;' : ' ' !!}</td>
+                                <td>{!! $course->{'9CO7_PO1'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO2'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO3'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO4'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO5'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO6'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO7'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO8'} ? '✓' : '✗' !!}</td>
+                                <td>{!! $course->{'9CO7_PO9'} ? '✓' : '✗' !!}</td>
                                 <td>{{ $course->CO7_L }}</td>
                                 <td>{{ $course->CO7_A }}</td>
                             </tr>
@@ -242,53 +246,55 @@
                     <p class="courseInfo">Transferable Skills (if applicable):<br>
                     (Skills learned in the course of study which can be useful and utilized in other settings)</p>
                     <table>                  
-                        <th>Transferable Skills</th>
-                        <th>Yes</th>
-                        <th>No</th>
+                        <tr>
+                            <th>Transferable Skills</th>
+                            <th>Yes</th>
+                            <th>No</th>
+                        </tr>
                         <tr>
                             <td class="courseInfo">TS 1: Cognitive Skills</td>
-                            <td>{!! $course->{'10TS1_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS1_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS1_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS1_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>  
                         <tr>
                             <td class="courseInfo">TS 2: Interpersonal Skills</td>
-                            <td>{!! $course->{'10TS2_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS2_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS2_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS2_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 3: Communication Skills</td>
-                            <td>{!! $course->{'10TS3_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS3_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS3_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS3_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 4: Digital Skills</td>
-                            <td>{!! $course->{'10TS4_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS4_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS4_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS4_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 5: Numeracy Skills </td>
-                            <td>{!! $course->{'10TS5_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS5_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS5_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS5_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 6: Leadership, autonomy and responsibilities</td>
-                            <td>{!! $course->{'10TS6_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS6_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS6_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS6_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 7: Personal Skills (Life-long learning) </td>
-                            <td>{!! $course->{'10TS7_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS7_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS7_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS7_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 8: Entrepreneurial Skills</td>
-                            <td>{!! $course->{'10TS8_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS8_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS8_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS8_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                         <tr>
                             <td class="courseInfo">TS 9: Ethics and Professionalism </td>
-                            <td>{!! $course->{'10TS9_Y'} ? '&#10004;' : ' ' !!}</td>
-                            <td>{!! $course->{'10TS9_N'} ? '&#10004;' : ' ' !!}</td>                                
+                            <td>{!! $course->{'10TS9_Y'} ? '✓' : '✗' !!}</td>
+                            <td>{!! $course->{'10TS9_N'} ? '✓' : '✗' !!}</td>                                
                         </tr>                                
                     </table><br>
                     <p class="courseInfo">Note: Yes denotes that this course contributes to the development of the transferable skills. No indicates that this course does not
@@ -383,11 +389,15 @@
                 <td></td>
                 <td>
                     <table>
-                        <th>Continuous Assessment</th> 
-                        <th>Percentage(%)</th> 
-                        <th>F2F</th> 
-                        <th>NF2F</th> 
-                        <th>Total SLT</th> 
+                        <thead>
+                            <tr>
+                                <th>Continuous Assessment</th> 
+                                <th>Percentage(%)</th> 
+                                <th>F2F</th> 
+                                <th>NF2F</th> 
+                                <th>Total SLT</th> 
+                            </tr>
+                        </thead>
                         <tr>
                             <td>Test, Practical Assessment, Assignment</td>
                             <td>{{ $course->{'CA_Percentage'} }}</td>
@@ -395,11 +405,6 @@
                             <td>{{ $course->{'CA_NF2F'} }}</td>
                             <td>{{ $course->{'CA_TotalSLT'} }}</td>
                         </tr>
-                        <th>Continuous Assessment</th> 
-                        <th>Percentage(%)</th> 
-                        <th>F2F</th> 
-                        <th>NF2F</th> 
-                        <th>Total SLT</th> 
                         <tr>
                             <td>Final Examination</td>
                             <td>{{ $course->{'FA_Percentage'} }}</td>
@@ -413,6 +418,9 @@
                         </tr>            
                     </table>
                     <br>
+                    <h5 style="float:left;">**Please tick (√) if this course is Industrial Training / Clinical Placement / Practicum / WBL using
+                    Effective Learning Time(ELT) of 50%</h5>
+                    <checkbox type="checkbox" style="width:20px;height:20px;background:white;border:2px solid #999;">{!! $course->{'11_tick'} ? '✓' : '✗' !!}</checkbox>
                     <p class="courseInfo">* L = Lecture, T = Tutorial, P = Practical, O = Others, * F2F = Face-to-Face, NF2F = Non Face-to-Face</p>
                 </td>
             </tr>
