@@ -29,7 +29,6 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                        <img class="image" src="/images/download.jpeg" style="width:150px;padding:20px;">                
                         {{ __('Syllabus Management Portal') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -86,7 +85,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
 </body>
 
 </html>
