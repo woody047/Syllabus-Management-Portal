@@ -7,7 +7,6 @@ use App\Models\Course;
 use App\Models\CourseRow;
 use App\Models\InfoOnPracRow;
 use Illuminate\Support\Facades\Auth;
-use PDF;
 use Mpdf\Mpdf;
 
 class CourseController extends Controller{
