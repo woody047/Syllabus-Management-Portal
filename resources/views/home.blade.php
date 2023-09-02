@@ -44,7 +44,7 @@
                     <td class="code">{{$courselist ->course_code}}</td>
                     <td class="courseName">{{$courselist->course_name}}</td>
                     <td class="desc">{{$courselist->course_synopsis}}</td>
-                    <div class="btn">
+                    <div class="action">
                         <td>
                             <a href="{{ route('showCourse',['course_id'=>$courselist->course_id]) }}"  class="btn btn-primary">View</a>
                             <a href="{{ route('editCourse',['course_id'=>$courselist->course_id]) }}"  class="btn btn-info">Update</a>

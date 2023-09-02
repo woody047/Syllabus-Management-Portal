@@ -83,12 +83,18 @@
                                         <label>CO2- &nbsp;</label><input type="text" name="8CLO2" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO2'} }}"></input><br>
                                         <label>CO3- &nbsp;</label><input type="text" name="8CLO3" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO3'} }}"></input><br>
                                         <label>CO4- &nbsp;</label><input type="text" name="8CLO4" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO4'} }}"></input><br>
+                                        <label>CO5- &nbsp;</label><input type="text" name="8CLO5" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO5'} }}"></input><br>
+                                        <label>CO6- &nbsp;</label><input type="text" name="8CLO6" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO6'} }}"></input><br>
+                                        <label>CO7- &nbsp;</label><input type="text" name="8CLO7" class="tab-space" style="width:700px;" value="{{ $course->{'8CLO7'} }}"></input><br>
                                     </td>
                                     <td style="width:100px;">
                                         <input type="text" name="8DTL1" class="tab-space" value="{{ $course->{'8DTL1'} }}"></input><br>
                                         <input type="text" name="8DTL2" class="tab-space" value="{{ $course->{'8DTL2'} }}"></input><br>
                                         <input type="text" name="8DTL3" class="tab-space" value="{{ $course->{'8DTL3'} }}"></input><br>
                                         <input type="text" name="8DTL4" class="tab-space" value="{{ $course->{'8DTL4'} }}"></input><br>
+                                        <input type="text" name="8DTL5" class="tab-space" value="{{ $course->{'8DTL5'} }}"></input><br>
+                                        <input type="text" name="8DTL6" class="tab-space" value="{{ $course->{'8DTL6'} }}"></input><br>
+                                        <input type="text" name="8DTL7" class="tab-space" value="{{ $course->{'8DTL7'} }}"></input><br>
                                     </td>
                                 </tr>
                                 <p class="courseInfo">Domain and Taxonomy Level – Cognitive (C), Level 1 - 6; Affective (A), Level 1 - 5; Psychomotor (P), Level 1 - 5</p>

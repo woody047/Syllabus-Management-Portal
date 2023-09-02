@@ -33,7 +33,7 @@ class AuditController extends Controller
                 $courseQuery->where('course_code', 'LIKE', '%' . $keyword . '%')
                             ->orWhere('course_name', 'LIKE', '%' . $keyword . '%');
             });
-        })->orderBy('created_at', 'desc')->paginate(10);
+        })->orderBy('created_at', 'desc')->get();
         return view('searchAudit', compact('audits','keyword'));
     }
 }

@@ -265,10 +265,16 @@ class CourseController extends Controller{
         $course->{'8CLO2'} = $req->{'8CLO2'};
         $course->{'8CLO3'} = $req->{'8CLO3'};
         $course->{'8CLO4'} = $req->{'8CLO4'};
+        $course->{'8CLO5'} = $req->{'8CLO5'};
+        $course->{'8CLO6'} = $req->{'8CLO6'};
+        $course->{'8CLO7'} = $req->{'8CLO7'};
         $course->{'8DTL1'} = $req->{'8DTL1'};
         $course->{'8DTL2'} = $req->{'8DTL2'};
         $course->{'8DTL3'} = $req->{'8DTL3'};
         $course->{'8DTL4'} = $req->{'8DTL4'};
+        $course->{'8DTL5'} = $req->{'8DTL5'};
+        $course->{'8DTL6'} = $req->{'8DTL6'};
+        $course->{'8DTL7'} = $req->{'8DTL7'};
         //9. CO1
         //use a ternary operator to convert the checkbox value to an integer (1 for checked, 0 for unchecked) before saving it to the database.
         $course->{'9CO1_PO1'} = $req->has('9CO1_PO1');

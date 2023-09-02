@@ -108,9 +108,6 @@
         @else
             <p>No audit log found matching "{{$keyword}}"</p>
         @endif
-        <span>
-            {{$audits->links()}}
-        </span>
     </body>
 </div>
 
