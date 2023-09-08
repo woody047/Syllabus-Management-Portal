@@ -180,7 +180,6 @@ class CreateCoursesTable extends Migration
             $table->string('FA_TotalSLT',50);
             $table->string('grand_total_SLT',50);
             $table->boolean('11_tick')->nullable();
-
             //12
             $table->string('special_requirement',255);
             //13
@@ -192,7 +191,9 @@ class CreateCoursesTable extends Migration
             $table->string('date_of_senate_approval',50);                               
             //16
             $table->string('effective_trimester',50);                               
-
+            //status
+            $table->string('status')->default('pending');
+            $table->string('update_status')->default('pending');
             //foreign key (user_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

@@ -35,6 +35,8 @@ Route::put('/saveCourse/{course_id}',[CourseController::class,'saveCourse'])->na
 Route::get('/archiveCourse/{course_id}',[CourseController::class,'archiveCourse'])->name('archiveCourse');
 Route::get('/showArchivedCourse',[CourseController::class,'showArchivedCourse'])->name('showArchivedCourse');
 Route::get('/restoreCourse/{course_id}', [CourseController::class, 'restoreCourse'])->name('restoreCourse');
+//approveCourse
+Route::post('/approveCourse/{course_id}', [CourseController::class,'approveCourse'])->name('approveCourse');
 //searchCourse
 Route::get('/searchCourse',[CourseController::class,'searchCourse'])->name('searchCourse');
 
@@ -56,3 +58,5 @@ Route::post('/profile/editPassword', [UserController::class, 'savePassword'])->n
 
 //pdf export
 Route::get('downloadPDF/{course_id}', 'App\Http\Controllers\CourseController@downloadPDF')->name('downloadPDF');
+
+

@@ -56,10 +56,23 @@ tr:hover {
     background-color: #ff1f35;
 }
 
+.actionButton{
+    justify-content: center;
+    display:flex;
+}
+
+.actionButton form{
+    margin:2px;
+}
+
+.actionButton a{
+    margin:2px;
+}
+
 .id{
     width:50px;
-
 }
+
 .code{
     width:90px;
 }
@@ -67,6 +80,10 @@ tr:hover {
 .courseName{
     padding-right:13px;
     width:250px;
+}
+
+.status{
+    width:100px;
 }
 
 .desc{

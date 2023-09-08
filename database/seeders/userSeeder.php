@@ -16,33 +16,33 @@ class userSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'TangZiWeng',
-                'email' => 'staff@gmail.com',
-                'password' => bcrypt('staff'),
+                'name' => 'Tang Zi Weng',
+                'email' => 'tang@gmail.com',
+                'password' => bcrypt('tangtang'),
                 'role' => 'staff',
             ],
         ]);
         DB::table('users')->insert([
             [
-                'name' => 'TaiKhorWin',
-                'email' => 'lecturer1@gmail.com',
-                'password' => bcrypt('lecturer'),
+                'name' => 'Tai Khor Win',
+                'email' => 'tai@gmail.com',
+                'password' => bcrypt('taitai'),
                 'role' => 'lecturer',
             ],
         ]);
         DB::table('users')->insert([
             [
-                'name' => 'TnekShiinWei',
-                'email' => 'lecturer2@gmail.com',
-                'password' => bcrypt('lecturer'),
+                'name' => 'Tnek Shiin Wei',
+                'email' => 'tnek@gmail.com',
+                'password' => bcrypt('tnektnek'),
                 'role' => 'lecturer',
             ],
         ]);
         DB::table('users')->insert([
             [
-                'name' => 'YanHaoYang',
-                'email' => 'lecturer3@gmail.com',
-                'password' => bcrypt('lecturer'),
+                'name' => 'Yan Hao Yang',
+                'email' => 'yan@gmail.com',
+                'password' => bcrypt('yanyan'),
                 'role' => 'lecturer',
             ],
         ]);

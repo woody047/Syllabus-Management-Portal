@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use App\Models\Course;
 use App\Models\CourseRow;
 use App\Models\InfoOnPracRow;
@@ -10,11 +11,19 @@ use Illuminate\Support\Facades\Auth;
 use Mpdf\Mpdf;
 
 class CourseController extends Controller{
-    function showlist(){
-        $course = Course::paginate(10,['course_id', 'course_code', 'course_name','course_synopsis']);
-        return view('home')->with('course',$course);
-    }
-
+    public function showlist()
+    {
+        if (Gate::allows('isLecturer')) {
+            // Fetch approved course syllabi to lecturer view
+            $course = Course::where('status', 'approved')->paginate(10, ['course_id', 'course_code', 'course_name', 'course_synopsis', 'status']);
+        } else {
+            // Fetch all approved and pending course syllabi for staff
+            $course = Course::whereIn('status', ['approved', 'pending'])->paginate(10, ['course_id', 'course_code', 'course_name', 'course_synopsis', 'status']);
+        }
+    
+        return view('home')->with('course', $course);
+    } 
+             
     function showCourse($course_id){
         $course = Course::find($course_id);
         return view('showCourse',compact('course'));
@@ -241,7 +250,7 @@ class CourseController extends Controller{
             $infoOnPracRow->contact_hours = $req->contact_hours[$i];
             $infoOnPracRow->save();
         }
-        return redirect("home")->with('success', $req->course_name . ' (' . $req->course_code . ') created successfully');
+        return redirect("home")->with('success', $req->course_name . ' (' . $req->course_code . ') created successfully, waiting for approval');
     }
 
     //retrieve data from database and pass to the edit page    
@@ -477,7 +486,7 @@ class CourseController extends Controller{
         $infoOnPracRow->save();
         }
 
-        return redirect('home')->with('success', $req->course_name . ' (' . $req->course_code . ') updated successfully');
+        return redirect('home')->with('success', $req->course_name . ' (' . $req->course_code . ') updated successfully, waiting for approval');
     }
 
     function archiveCourse($course_id){
@@ -504,15 +513,51 @@ class CourseController extends Controller{
         return redirect()->route('showArchivedCourse')->with('success', $course->course_name . ' (' . $course->course_code . ') restored successfully');
     }
 
-    function searchCourse(Request $req){
-        $keyword = $req->input('keyword');
+    public function approveCourse($course_id)
+    {
+        $course = Course::find($course_id);
 
-        $course = Course::where('course_name','like','%'.$keyword.'%')
-                ->orWhere('course_code','like','%'.$keyword.'%')
-                ->paginate(10);
-
-        return view('searchCourse',compact('course','keyword'));
+        // Check if the user is staff and the course status is pending
+        if (Gate::allows('isStaff') && $course->status === 'pending') {
+            $course->status = 'approved';
+            $course->save();
+            
+            return redirect('home')->with('success', $course->course_name . ' (' . $course->course_code . ') approved successfully');
+        }
     }
+
+    public function searchCourse(Request $req)
+    {
+        $keyword = $req->input('keyword');
+    
+        // Check if the user is a lecturer
+        if (Auth::user()->role == 'lecturer') {
+            // Fetch approved course syllabi
+            $course = Course::where('status', 'approved')
+                ->where(function ($query) use ($keyword) {
+                    $query->where('course_name', 'like', '%' . $keyword . '%')
+                        ->orWhere('course_code', 'like', '%' . $keyword . '%');
+                })
+                ->paginate(10);
+        } else if (Auth::user()->role == 'staff') {
+            // Fetch both pending and approved course syllabi for staff
+            $course = Course::where(function ($query) use ($keyword) {
+                    $query->where('course_name', 'like', '%' . $keyword . '%')
+                        ->orWhere('course_code', 'like', '%' . $keyword . '%');
+                })
+                ->paginate(10);
+        } else {
+            // For other roles, fetch approved course syllabi
+            $course = Course::where('status', 'approved')
+                ->where(function ($query) use ($keyword) {
+                    $query->where('course_name', 'like', '%' . $keyword . '%')
+                        ->orWhere('course_code', 'like', '%' . $keyword . '%');
+                })
+                ->paginate(10);
+        }
+    
+        return view('searchCourse', compact('course', 'keyword'));
+    }    
 
     public function downloadPDF(Request $req)
     {

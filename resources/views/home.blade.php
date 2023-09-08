@@ -28,28 +28,37 @@
     <div class="table-container">
         <table>
         @if(count($course)>0)
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Code</th>
-                    <th>Course Name</th>
-                    <th>Synopsis</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($course as $courselist)
-                <tr>
-                    <td class="id">{{$courselist ->course_id}}</td>
-                    <td class="code">{{$courselist ->course_code}}</td>
-                    <td class="courseName">{{$courselist->course_name}}</td>
-                    <td class="desc">{{$courselist->course_synopsis}}</td>
-                    <div class="action">
-                        <td>
-                            <a href="{{ route('showCourse',['course_id'=>$courselist->course_id]) }}"  class="btn btn-primary">View</a>
-                            <a href="{{ route('editCourse',['course_id'=>$courselist->course_id]) }}"  class="btn btn-info">Update</a>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Course Name</th>
+                <th>Synopsis</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($course as $courselist)
+            <tr>
+                <td class="code">{{$courselist->course_code}}</td>
+                <td class="courseName">{{$courselist->course_name}}</td>
+                <td class="desc">{{$courselist->course_synopsis}}</td>
+                <td class="status">{{$courselist->status}}</td>
+                <div class="action">
+                    <td>
+                        <div class="actionButton">
+                            @if (Gate::allows('isStaff') && $courselist->status == 'pending')
+                            <form action="{{ route('approveCourse', ['course_id' => $courselist->course_id]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Approve</button>
+                            </form>
+                            @endif
+                            <a href="{{ route('showCourse', ['course_id' => $courselist->course_id]) }}" class="btn btn-primary">View</a>
+                            <a href="{{ route('editCourse', ['course_id' => $courselist->course_id]) }}" class="btn btn-info">Update</a>
                             @if (Gate::allows('isStaff'))
-                            <a href="{{ route('archiveCourse',['course_id'=>$courselist->course_id]) }}" class="btn btn-danger archive-link">Archive</a>
+                            <a href="{{ route('archiveCourse', ['course_id' => $courselist->course_id]) }}" class="btn btn-danger archive-link">Archive</a>
+                            @endif
+                            <!-- Archive confirmation modal -->
                             <div class="modal fade" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -58,7 +67,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Are you sure you want to archive the course syllabus? Archiving will move the course syllabus to the archived course files.
+                                        Are you sure you want to archive the course syllabus? Archiving will move the course syllabus to the archived course files.
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" id="confirmArchive">Archive</button>
@@ -67,15 +76,15 @@
                                     </div>
                                 </div>
                             </div>
-                            @endif
-                        </td>
-                    </div>
-                </tr>
-                @endforeach
-                <span>
-                    {{$course->links()}}
-                </span>
-            </tbody>
+                        </div>
+                    </td>
+                </div>
+            </tr>
+            @endforeach
+            <span>
+                {{ $course->links() }}
+            </span>
+        </tbody>
         @else
             <p>No courses created</p>
         @endif
@@ -95,7 +104,3 @@
 
 <script src="{{ asset('js/archivebutton.js') }}"></script>
 @endsection
-
-
-
-
