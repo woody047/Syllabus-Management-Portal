@@ -193,7 +193,6 @@ class CreateCoursesTable extends Migration
             $table->string('effective_trimester',50);                               
             //status
             $table->string('status')->default('pending');
-            $table->string('update_status')->default('pending');
             //foreign key (user_id)
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
