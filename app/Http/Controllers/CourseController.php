@@ -486,7 +486,7 @@ class CourseController extends Controller{
         $infoOnPracRow->save();
         }
 
-        return redirect('home')->with('success', $req->course_name . ' (' . $req->course_code . ') updated successfully, waiting for approval');
+        return redirect('home')->with('success', $req->course_name . ' (' . $req->course_code . ') updated successfully');
     }
 
     function archiveCourse($course_id){
